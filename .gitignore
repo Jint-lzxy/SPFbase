@@ -16,6 +16,7 @@
 
 /LuaSTG/MyResourcePassword.cpp
 /LuaSTG/ResourcePassword.cpp
+/编译检查单.txt
 
 # 生成文件
 
@@ -35,3 +36,6 @@
 /LuaExtend/build/*
 /prebuild/*
 /SteamAPI/*
+/luafilesystem/*
+/luacjson/*
+/luasocket/*
