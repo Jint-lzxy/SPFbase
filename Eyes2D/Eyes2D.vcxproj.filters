@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{4a094577-71cb-4a8c-9b93-a751700a8783}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Debug">
+      <UniqueIdentifier>{19bf6884-d21f-4d80-994e-078f5a6fecb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Input">
+      <UniqueIdentifier>{c04812ee-f8da-4612-a42d-4670812d07c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\I/O">
+      <UniqueIdentifier>{8a3bdec9-8f99-4d0a-ae5a-fdb5c42cdc5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Platform">
+      <UniqueIdentifier>{a51f7db3-f8ab-4569-8128-1723ba92716f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Sound">
+      <UniqueIdentifier>{2a7f2924-5fde-4079-b840-276447883874}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="E2DXInputImpl.cpp">
+      <Filter>System\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="E2DWaveDecoder.cpp">
+      <Filter>System\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="E2DXAudio2SoundPlayer.cpp">
+      <Filter>System\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="E2DFileManager.cpp">
+      <Filter>System\I/O</Filter>
+    </ClCompile>
+    <ClCompile Include="E2DLogSystem.cpp">
+      <Filter>System\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="E2DAudioEngine.cpp">
+      <Filter>System\Sound</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E2DGlobal.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="E2DXInputImpl.hpp">
+      <Filter>System\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="E2DMath.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="E2DWaveDecoder.hpp">
+      <Filter>System\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="E2DSound.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="E2DXAudio2SoundPlayer.hpp">
+      <Filter>System\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="E2DException.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="E2DMainFunction.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="E2DFileManager.hpp">
+      <Filter>System\I/O</Filter>
+    </ClInclude>
+    <ClInclude Include="E2DCodePage.hpp">
+      <Filter>System\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="E2DLogSystem.hpp">
+      <Filter>System\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="E2DFilePath.hpp">
+      <Filter>System\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="E2DAudioEngine.hpp">
+      <Filter>System\Sound</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

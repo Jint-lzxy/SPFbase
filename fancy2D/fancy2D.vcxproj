@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{89A4F0A7-53F3-4C4F-AEFF-27074CCAE973}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>fancy2D</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(ProjectDir)\build\</OutDir>
+    <IntDir>$(ProjectDir)\build\dir\$(Configuration)\</IntDir>
+    <TargetName>fancy2d_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <TargetName>$(ProjectName)_d</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>bin\arm\</OutDir>
+    <IntDir>obj\arm\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(ProjectDir)\build\</OutDir>
+    <IntDir>$(ProjectDir)\build\dir\$(Configuration)\</IntDir>
+    <TargetName>fancy2D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>bin\arm\</OutDir>
+    <IntDir>obj\arm\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FANCY2D_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\fancylib\;$(SolutionDir)\DirectShowClass\;$(SolutionDir)\prebuild\dxsdk\include\;$(SolutionDir)\prebuild\zlib\include\;$(SolutionDir)\prebuild\libogg\include\;$(SolutionDir)\prebuild\libvorbis\include\;$(SolutionDir)\prebuild\freetype\include\</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+      <BrowseInformation>true</BrowseInformation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)\fancylib\build\;$(SolutionDir)\DirectShowClass\build\;$(SolutionDir)\prebuild\dxsdk\lib\;$(SolutionDir)\prebuild\zlib\lib\$(Configuration)\;$(SolutionDir)\prebuild\libogg\lib\$(Configuration)\;$(SolutionDir)\prebuild\libvorbis\lib\$(Configuration)\;$(SolutionDir)\prebuild\freetype\lib\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>fancylib_d.lib;Strmiids.lib;strmbasd.lib;dxguid.lib;winmm.lib;Imm32.lib;d3dx9.lib;zlib.lib;ogg.lib;vorbis.lib;vorbisfile.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;_DEBUG;_WINDOWS;_USRDLL;FANCY2D_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\fancylib;extern\DirectShowClass\;extern\DXSDK\include;extern\libvorbis\include;extern\libogg\include;extern\freetype\include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <MinimalRebuild>true</MinimalRebuild>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)\fancylib\bin\arm\;extern\DirectShowClass\bin\arm\$(Configuration)\;extern\libvorbis\lib\arm\$(Configuration)\;extern\libogg\lib\arm\$(Configuration)\;extern\freetype\bin\arm\$(Configuration)\;extern\arm\;extern\freeimage\arm\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>fancylib_d.lib;strmbasd.lib;libvorbis.lib;libogg.lib;freetype.lib;imm32.lib;winmm.lib;ole32.lib;gdi32.lib;advapi32.lib;oleaut32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FANCY2D_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(SolutionDir)\fancylib\;$(SolutionDir)\DirectShowClass\;$(SolutionDir)\prebuild\dxsdk\include\;$(SolutionDir)\prebuild\zlib\include\;$(SolutionDir)\prebuild\libogg\include\;$(SolutionDir)\prebuild\libvorbis\include\;$(SolutionDir)\prebuild\freetype\include\</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)\fancylib\build\;$(SolutionDir)\DirectShowClass\build\;$(SolutionDir)\prebuild\dxsdk\lib\;$(SolutionDir)\prebuild\zlib\lib\$(Configuration)\;$(SolutionDir)\prebuild\libogg\lib\$(Configuration)\;$(SolutionDir)\prebuild\libvorbis\lib\$(Configuration)\;$(SolutionDir)\prebuild\freetype\lib\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>fancylib.lib;Strmiids.lib;strmbase.lib;dxguid.lib;winmm.lib;Imm32.lib;d3dx9.lib;zlib.lib;ogg.lib;vorbis.lib;vorbisfile.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;NDEBUG;_WINDOWS;_USRDLL;FANCY2D_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(SolutionDir)\fancylib;extern\DirectShowClass\;extern\DXSDK\include;extern\libvorbis\include;extern\libogg\include;extern\freetype\include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)\fancylib\bin\arm\;extern\DirectShowClass\bin\arm\$(Configuration)\;extern\libvorbis\lib\arm\$(Configuration)\;extern\libogg\lib\arm\$(Configuration)\;extern\freetype\bin\arm\$(Configuration)\;extern\arm\;extern\freeimage\arm\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>fancylib.lib;strmbase.lib;libvorbis.lib;libogg.lib;freetype.lib;imm32.lib;winmm.lib;ole32.lib;gdi32.lib;advapi32.lib;oleaut32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\f2dEngineImpl.h" />
+    <ClInclude Include="Engine\f2dFileSysImpl.h" />
+    <ClInclude Include="Engine\f2dFPSControllerImpl.h" />
+    <ClInclude Include="Engine\f2dMsgPumpImpl.h" />
+    <ClInclude Include="Engine\f2dWindowImpl.h" />
+    <ClInclude Include="f2d.h" />
+    <ClInclude Include="f2dEngine.h" />
+    <ClInclude Include="f2dFileSys.h" />
+    <ClInclude Include="f2dInputSys.h" />
+    <ClInclude Include="f2dInterface.h" />
+    <ClInclude Include="f2dRenderDevice.h" />
+    <ClInclude Include="f2dRenderer.h" />
+    <ClInclude Include="f2dSoundSys.h" />
+    <ClInclude Include="RenderDev\f2dGraphics3DImpl.h" />
+    <ClInclude Include="RenderDev\f2dMeshDataImpl.h" />
+    <ClInclude Include="Renderer\f2dFontFileProvider.h" />
+    <ClInclude Include="Renderer\f2dFontRendererImpl.h" />
+    <ClInclude Include="Renderer\f2dFontTexProvider.h" />
+    <ClInclude Include="Renderer\f2dGeometryRendererImpl.h" />
+    <ClInclude Include="Renderer\f2dParticle.h" />
+    <ClInclude Include="Renderer\f2dSpriteAnimationImpl.h" />
+    <ClInclude Include="Renderer\f2dSpriteImpl.h" />
+    <ClInclude Include="f2dVideoSys.h" />
+    <ClInclude Include="f2dWindow.h" />
+    <ClInclude Include="Input\f2dInputJoystickImpl.h" />
+    <ClInclude Include="Input\f2dInputKeyboardImpl.h" />
+    <ClInclude Include="Input\f2dInputMouseImpl.h" />
+    <ClInclude Include="Input\f2dInputSysAPI.h" />
+    <ClInclude Include="Input\f2dInputSysImpl.h" />
+    <ClInclude Include="RenderDev\f2dEffectImpl.h" />
+    <ClInclude Include="RenderDev\f2dGraphics2DImpl.h" />
+    <ClInclude Include="RenderDev\f2dGraphicsImpl.h" />
+    <ClInclude Include="RenderDev\f2dRenderDeviceAPI.h" />
+    <ClInclude Include="RenderDev\f2dRenderDeviceImpl.h" />
+    <ClInclude Include="RenderDev\f2dTextureImpl.h" />
+    <ClInclude Include="Renderer\f2dRendererImpl.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Sound\f2dSoundBufferDynamic.h" />
+    <ClInclude Include="Sound\f2dSoundBufferPull.h" />
+    <ClInclude Include="Sound\f2dSoundBufferStatic.h" />
+    <ClInclude Include="Sound\f2dSoundSpriteImpl.h" />
+    <ClInclude Include="Sound\f2dSoundSysAPI.h" />
+    <ClInclude Include="Sound\f2dSoundSysImpl.h" />
+    <ClInclude Include="Sound\f2dVorbisDecoder.h" />
+    <ClInclude Include="Sound\f2dWaveDecoder.h" />
+    <ClInclude Include="Video\f2dVideoImpl.h" />
+    <ClInclude Include="Video\f2dVideoRenderer.h" />
+    <ClInclude Include="Video\f2dVideoStream.h" />
+    <ClInclude Include="Video\f2dVideoSysImpl.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine\f2dEngineImpl.cpp" />
+    <ClCompile Include="Engine\f2dFileSysImpl.cpp" />
+    <ClCompile Include="Engine\f2dWindowImpl.cpp" />
+    <ClCompile Include="RenderDev\f2dGraphics3DImpl.cpp" />
+    <ClCompile Include="RenderDev\f2dMeshDataImpl.cpp" />
+    <ClCompile Include="Renderer\f2dFontFileProvider.cpp" />
+    <ClCompile Include="Renderer\f2dFontRendererImpl.cpp" />
+    <ClCompile Include="Renderer\f2dFontTexProvider.cpp" />
+    <ClCompile Include="Renderer\f2dGeometryRendererImpl.cpp" />
+    <ClCompile Include="Renderer\f2dParticle.cpp" />
+    <ClCompile Include="Renderer\f2dSpriteAnimationImpl.cpp" />
+    <ClCompile Include="Renderer\f2dSpriteImpl.cpp" />
+    <ClCompile Include="Input\f2dInputJoystickImpl.cpp" />
+    <ClCompile Include="Input\f2dInputKeyboardImpl.cpp" />
+    <ClCompile Include="Input\f2dInputMouseImpl.cpp" />
+    <ClCompile Include="Input\f2dInputSysAPI.cpp" />
+    <ClCompile Include="Input\f2dInputSysImpl.cpp" />
+    <ClCompile Include="RenderDev\f2dEffectImpl.cpp" />
+    <ClCompile Include="RenderDev\f2dGraphics2DImpl.cpp" />
+    <ClCompile Include="RenderDev\f2dRenderDeviceAPI.cpp" />
+    <ClCompile Include="RenderDev\f2dRenderDeviceImpl.cpp" />
+    <ClCompile Include="RenderDev\f2dTextureImpl.cpp" />
+    <ClCompile Include="Renderer\f2dRendererImpl.cpp" />
+    <ClCompile Include="Sound\f2dSoundBufferDynamic.cpp" />
+    <ClCompile Include="Sound\f2dSoundBufferPull.cpp" />
+    <ClCompile Include="Sound\f2dSoundBufferStatic.cpp" />
+    <ClCompile Include="Sound\f2dSoundSpriteImpl.cpp" />
+    <ClCompile Include="Sound\f2dSoundSysAPI.cpp" />
+    <ClCompile Include="Sound\f2dSoundSysImpl.cpp" />
+    <ClCompile Include="Sound\f2dVorbisDecoder.cpp" />
+    <ClCompile Include="Sound\f2dWaveDecoder.cpp" />
+    <ClCompile Include="Video\f2dVideoImpl.cpp" />
+    <ClCompile Include="Video\f2dVideoRenderer.cpp" />
+    <ClCompile Include="Video\f2dVideoStream.cpp" />
+    <ClCompile Include="Video\f2dVideoSysImpl.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="fancy2D.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dev|Win32">
+      <Configuration>Dev</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dev|x64">
+      <Configuration>Dev</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AppFrame.h" />
+    <ClInclude Include="Bencode.h" />
+    <ClInclude Include="CirularQueue.hpp" />
+    <ClInclude Include="CollisionDetect.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="Dictionary.hpp" />
+    <ClInclude Include="ESC.h" />
+    <ClInclude Include="GameObject.hpp" />
+    <ClInclude Include="GameObjectBentLaser.hpp" />
+    <ClInclude Include="GameObjectClass.hpp" />
+    <ClInclude Include="GameObjectPool.h" />
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="LogSystem.h" />
+    <ClInclude Include="LuaCustomLoader.hpp" />
+    <ClInclude Include="LuaInternalSource.hpp" />
+    <ClInclude Include="LuaStringToEnum.hpp" />
+    <ClInclude Include="LuaTableToOption.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Dev|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="LuaWrapper\LuaWrapper.hpp" />
+    <ClInclude Include="LuaWrapper\LuaWrapperMisc.hpp" />
+    <ClInclude Include="LW_SteamAPI.h" />
+    <ClInclude Include="Network.h" />
+    <ClInclude Include="ObjectPool.hpp" />
+    <ClInclude Include="RemoteDebuggerClient.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ResourceAnimation.hpp" />
+    <ClInclude Include="ResourceAudio.hpp" />
+    <ClInclude Include="ResourceBase.hpp" />
+    <ClInclude Include="ResourceFont.hpp" />
+    <ClInclude Include="ResourceFX.hpp" />
+    <ClInclude Include="ResourceMgr.h" />
+    <ClInclude Include="ResourceModel.hpp" />
+    <ClInclude Include="ResourceParticle.hpp" />
+    <ClInclude Include="ResourcePassword.hpp" />
+    <ClInclude Include="ResourceSprite.hpp" />
+    <ClInclude Include="ResourceTexture.hpp" />
+    <ClInclude Include="RuntimeCheck.hpp" />
+    <ClInclude Include="SplashWindow.h" />
+    <ClInclude Include="SteamAPI.hpp" />
+    <ClInclude Include="SystemDirectory.hpp" />
+    <ClInclude Include="UnicodeStringEncoding.h" />
+    <ClInclude Include="Utility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AppFrame.cpp" />
+    <ClCompile Include="AppFrameFontRenderer.cpp" />
+    <ClCompile Include="AppFrameRender.cpp" />
+    <ClCompile Include="ArchiveWrapper.cpp" />
+    <ClCompile Include="Bencode.cpp" />
+    <ClCompile Include="CollisionDetect.cpp" />
+    <ClCompile Include="ESC.cpp" />
+    <ClCompile Include="FileManagerWrapper.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameObjectBentLaser.cpp" />
+    <ClCompile Include="GameObjectPool.cpp" />
+    <ClCompile Include="LogSystem.cpp" />
+    <ClCompile Include="LuaCustomLoader.cpp" />
+    <ClCompile Include="LuaInternalSource.cpp" />
+    <ClCompile Include="LuaStringToEnum.cpp" />
+    <ClCompile Include="LuaTableToOption.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Dev|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="LuaWrapperGlobal.cpp" />
+    <ClCompile Include="LuaWrapper\IO\LW_IO.cpp" />
+    <ClCompile Include="LuaWrapper\IO\LW_IO_BinaryReader.cpp" />
+    <ClCompile Include="LuaWrapper\IO\LW_IO_BinaryWriter.cpp" />
+    <ClCompile Include="LuaWrapper\IO\LW_IO_Steam.cpp" />
+    <ClCompile Include="LuaWrapper\LuaWrapper.cpp" />
+    <ClCompile Include="LuaWrapper\Misc\LW_BentLaser.cpp" />
+    <ClCompile Include="LuaWrapper\Misc\LW_Color.cpp" />
+    <ClCompile Include="LuaWrapper\Misc\LW_Randomizer.cpp" />
+    <ClCompile Include="LuaWrapper\Misc\LW_StopWatch.cpp" />
+    <ClCompile Include="LW_SteamAPI.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MyResourcePassword.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Dev|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Dev|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Network.cpp" />
+    <ClCompile Include="RemoteDebuggerClient.cpp" />
+    <ClCompile Include="ResourceAnimation.cpp" />
+    <ClCompile Include="ResourceAudio.cpp" />
+    <ClCompile Include="ResourceFont.cpp" />
+    <ClCompile Include="ResourceFX.cpp" />
+    <ClCompile Include="ResourceMgr.cpp" />
+    <ClCompile Include="ResourceParticle.cpp" />
+    <ClCompile Include="ResourcePassword.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Dev|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Dev|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="ResourcePool.cpp" />
+    <ClCompile Include="SplashWindow.cpp" />
+    <ClCompile Include="SteamAPI.cpp" />
+    <ClCompile Include="SystemDirectory.cpp" />
+    <ClCompile Include="UnicodeStringEncoding.cpp" />
+    <ClCompile Include="Utility.cpp" />
+    <ClCompile Include="XInputWrapper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="app.ico" />
+    <Image Include="splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LuaSTGPlus.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\编译检查单.txt" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{FB6F158E-769C-41A7-A275-32020D296388}</ProjectGuid>
+    <RootNamespace>LuaSTG</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Dev|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Dev|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)\build\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\build\$(Configuration)\pass\</IntDir>
+    <TargetName>LuaSTGPlus.Debug</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|Win32'">
+    <OutDir>$(SolutionDir)\build\Release\</OutDir>
+    <IntDir>$(SolutionDir)\build\Release\pass.dev\</IntDir>
+    <TargetName>LuaSTGPlus.dev</TargetName>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)\build\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\build\$(Configuration)\pass\</IntDir>
+    <TargetName>LuaSTGPlus</TargetName>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\fancy2d\;$(SolutionDir)\fancylib\;$(SolutionDir)\prebuild\luajit\include\;$(SolutionDir)\prebuild\xmath\include\;$(SolutionDir)\Eyes2D\;$(SolutionDir)\LuaExtend\;$(SolutionDir)\SteamAPI\public\steam\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)\fancy2d\build\;$(SolutionDir)\fancylib\build\;$(SolutionDir)\prebuild\luajit\lib\;$(SolutionDir)\prebuild\xmath\lib\$(Configuration)\;$(SolutionDir)\Eyes2D\build\$(Configuration)\;$(SolutionDir)\LuaExtend\build\;$(SolutionDir)\SteamAPI\redistributable_bin\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Link>
+      <AdditionalDependencies>Gdiplus.lib;fancylib_d.lib;fancy2d_d.lib;eyes2d.lib;xmath.lib;lua51.lib;luaextend_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dev|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\fancy2d\;$(SolutionDir)\fancylib\;$(SolutionDir)\prebuild\luajit\include\;$(SolutionDir)\prebuild\xmath\include\;$(SolutionDir)\Eyes2D\;$(SolutionDir)\LuaExtend\;$(SolutionDir)\SteamAPI\public\steam\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LDEVVERSION;WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <SupportJustMyCode>false</SupportJustMyCode>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)\fancy2d\build\;$(SolutionDir)\fancylib\build\;$(SolutionDir)\prebuild\luajit\lib\;$(SolutionDir)\prebuild\xmath\lib\Release\;$(SolutionDir)\Eyes2D\build\Release\;$(SolutionDir)\LuaExtend\build\;$(SolutionDir)\SteamAPI\redistributable_bin\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Gdiplus.lib;fancylib.lib;fancy2d.lib;eyes2d.lib;xmath.lib;lua51.lib;luaextend.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <Profile>true</Profile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dev|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\fancy2D\;$(SolutionDir)\fancylib\;$(SolutionDir)\prebuild\luajit\include\;$(SolutionDir)\prebuild\xmath\include\;$(SolutionDir)\Eyes2D\;$(SolutionDir)\LuaExtend\;$(SolutionDir)\SteamAPI\public\steam\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)\fancy2d\build\;$(SolutionDir)\fancylib\build\;$(SolutionDir)\prebuild\luajit\lib\;$(SolutionDir)\prebuild\xmath\lib\$(Configuration)\;$(SolutionDir)\Eyes2D\build\$(Configuration)\;$(SolutionDir)\LuaExtend\build\;$(SolutionDir)\SteamAPI\redistributable_bin\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Gdiplus.lib;fancylib.lib;fancy2d.lib;eyes2d.lib;xmath.lib;lua51.lib;luaextend.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <Profile>true</Profile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

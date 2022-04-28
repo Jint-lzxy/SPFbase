@@ -1,0 +1,37 @@
+# 本地文件
+
+/.vs/*
+/.git/*
+
+/xhg/*
+/classic/*
+/mwy/*
+/slk/*
+/sjf/*
+/eis/*
+/yqg/*
+/ykj/*
+
+# 隐私文件
+
+/LuaSTG/MyResourcePassword.cpp
+/LuaSTG/ResourcePassword.cpp
+
+# 生成文件
+
+/.vs/*
+/build/*
+
+/DirectShowClass/build/*
+/fancylib/build/*
+/fancy2D/build/*
+/Eyes2D/build/*
+
+/TexturedFontEditor/bin/*
+/TexturedFontEditor/obj/*
+
+# 第三方库和Extend生成文件过滤
+
+/LuaExtend/build/*
+/prebuild/*
+/SteamAPI/*
