@@ -42,3 +42,12 @@
 !/luacjson/note.txt
 /luasocket/*
 !/luasocket/note.txt
+
+# 杂项
+
+/.DS_Store
+/DirectShowClass/.DS_Store
+/Eyes2D/.DS_Store
+/LuaExtend/.DS_Store
+/fancy2D/.DS_Store
+/fancylib/.DS_Store
