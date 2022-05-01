@@ -1,6 +1,7 @@
 # 本地文件
 
 /.vs/*
+/Engine/.vs/*
 /.git/*
 
 /xhg/*
@@ -20,7 +21,6 @@
 
 # 生成文件
 
-/.vs/*
 /build/*
 
 /DirectShowClass/build/*
