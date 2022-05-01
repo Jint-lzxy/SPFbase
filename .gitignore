@@ -14,9 +14,9 @@
 
 # 隐私文件
 
-/LuaSTG/MyResourcePassword.cpp
-/LuaSTG/ResourcePassword.cpp
-/编译检查单.txt
+/Engine/MyResourcePassword.cpp
+/Engine/ResourcePassword.cpp
+/check.txt
 
 # 生成文件
 
@@ -28,8 +28,9 @@
 /fancy2D/build/*
 /Eyes2D/build/*
 
-/TexturedFontEditor/bin/*
-/TexturedFontEditor/obj/*
+# 纹理字体工具
+
+/TexturedFontEditor/*
 
 # 第三方库和Extend生成文件过滤
 

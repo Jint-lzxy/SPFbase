@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="LuaWrapper">
+      <UniqueIdentifier>{866134f9-f4a5-4098-a240-9a40f56c4127}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debuger">
+      <UniqueIdentifier>{d608d663-128f-46b3-ba0f-00a40bc43095}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogSystem">
+      <UniqueIdentifier>{7bd11c36-8698-42e6-805e-98a78d56f8ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{ed4761bc-ca0e-439c-84e0-f5e639f0f888}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collision">
+      <UniqueIdentifier>{e3f31573-8273-4b6b-9e60-e7001042fe93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{db87f629-9365-4ce3-aa7e-a187c5bd2c04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{d28a4c4b-eddd-43ea-893a-ab05e41589fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject">
+      <UniqueIdentifier>{fefe8e7c-cf2e-4563-8fc5-513804c54a28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Type">
+      <UniqueIdentifier>{0558ad2f-19fe-404b-94c9-f658e67deed6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuaWrapper\Class">
+      <UniqueIdentifier>{7f61d763-70b4-4b8b-94a5-f9d554b232dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuaUtility">
+      <UniqueIdentifier>{cb62da06-47fe-45af-aaee-5fd18aef9f46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuaWrapper\IO">
+      <UniqueIdentifier>{2824eb63-93e9-46ed-873c-8b24b8aacf18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuaWrapper\Misc">
+      <UniqueIdentifier>{9cbb89fb-d943-4e8c-befd-da1459bee295}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Steam">
+      <UniqueIdentifier>{f99f1c2e-730a-445a-8a8f-b7cf19c566b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuaWrapper\Steam">
+      <UniqueIdentifier>{42b64b8f-5c5e-476b-8ffb-648b18532f7f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AppFrame.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ESC.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoteDebuggerClient.h">
+      <Filter>Debuger</Filter>
+    </ClInclude>
+    <ClInclude Include="LogSystem.h">
+      <Filter>LogSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Bencode.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="UnicodeStringEncoding.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Dictionary.hpp">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="CirularQueue.hpp">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionDetect.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Network.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectPool.hpp">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectPool.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceMgr.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectClass.hpp">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.hpp">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceAnimation.hpp">
+      <Filter>Resource\Type</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceBase.hpp">
+      <Filter>Resource\Type</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceSprite.hpp">
+      <Filter>Resource\Type</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceTexture.hpp">
+      <Filter>Resource\Type</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceParticle.hpp">
+      <Filter>Resource\Type</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceFont.hpp">
+      <Filter>Resource\Type</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceFX.hpp">
+      <Filter>Resource\Type</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceAudio.hpp">
+      <Filter>Resource\Type</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceModel.hpp">
+      <Filter>Resource\Type</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaStringToEnum.hpp">
+      <Filter>LuaUtility</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaWrapper\LuaWrapper.hpp">
+      <Filter>LuaWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaWrapper\LuaWrapperMisc.hpp">
+      <Filter>LuaWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="RuntimeCheck.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectBentLaser.hpp">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourcePassword.hpp">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTableToOption.hpp">
+      <Filter>LuaUtility</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaInternalSource.hpp">
+      <Filter>LuaUtility</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaCustomLoader.hpp">
+      <Filter>LuaUtility</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemDirectory.hpp">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamAPI.hpp">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="LW_SteamAPI.h">
+      <Filter>LuaWrapper\Steam</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AppFrame.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ESC.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoteDebuggerClient.cpp">
+      <Filter>Debuger</Filter>
+    </ClCompile>
+    <ClCompile Include="LogSystem.cpp">
+      <Filter>LogSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Bencode.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="UnicodeStringEncoding.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionDetect.cpp">
+      <Filter>Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Network.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectPool.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectBentLaser.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceMgr.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourcePool.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceAnimation.cpp">
+      <Filter>Resource\Type</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceFont.cpp">
+      <Filter>Resource\Type</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceFX.cpp">
+      <Filter>Resource\Type</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceParticle.cpp">
+      <Filter>Resource\Type</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceAudio.cpp">
+      <Filter>Resource\Type</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManagerWrapper.cpp">
+      <Filter>LuaWrapper\Class</Filter>
+    </ClCompile>
+    <ClCompile Include="XInputWrapper.cpp">
+      <Filter>LuaWrapper\Class</Filter>
+    </ClCompile>
+    <ClCompile Include="ArchiveWrapper.cpp">
+      <Filter>LuaWrapper\Class</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaStringToEnum.cpp">
+      <Filter>LuaUtility</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaWrapper\LuaWrapper.cpp">
+      <Filter>LuaWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaWrapper\IO\LW_IO.cpp">
+      <Filter>LuaWrapper\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaWrapper\IO\LW_IO_Steam.cpp">
+      <Filter>LuaWrapper\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaWrapper\IO\LW_IO_BinaryReader.cpp">
+      <Filter>LuaWrapper\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaWrapper\IO\LW_IO_BinaryWriter.cpp">
+      <Filter>LuaWrapper\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaWrapper\Misc\LW_Color.cpp">
+      <Filter>LuaWrapper\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaWrapperGlobal.cpp">
+      <Filter>LuaWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaWrapper\Misc\LW_StopWatch.cpp">
+      <Filter>LuaWrapper\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaWrapper\Misc\LW_Randomizer.cpp">
+      <Filter>LuaWrapper\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaWrapper\Misc\LW_BentLaser.cpp">
+      <Filter>LuaWrapper\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="MyResourcePassword.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourcePassword.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaTableToOption.cpp">
+      <Filter>LuaUtility</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaInternalSource.cpp">
+      <Filter>LuaUtility</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaCustomLoader.cpp">
+      <Filter>LuaUtility</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemDirectory.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="SteamAPI.cpp">
+      <Filter>Steam</Filter>
+    </ClCompile>
+    <ClCompile Include="LW_SteamAPI.cpp">
+      <Filter>LuaWrapper\Steam</Filter>
+    </ClCompile>
+    <ClCompile Include="AppFrameRender.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppFrameFontRenderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="app.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="splash.png">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Check.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Engine.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
