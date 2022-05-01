@@ -28,6 +28,10 @@
 /fancy2D/build/*
 /Eyes2D/build/*
 
+# 测试文件
+
+/Engine/string2enum.py
+
 # 纹理字体工具
 
 /TexturedFontEditor/*
