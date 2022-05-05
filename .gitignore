@@ -27,6 +27,7 @@
 /fancylib/build/*
 /fancy2D/build/*
 /Eyes2D/build/*
+/.cache
 
 # 测试文件
 
