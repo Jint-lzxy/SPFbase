@@ -2,8 +2,6 @@
 
 《东方天慾录 ～The Sealing of Prophet's Fantasy》底层程序 by [冷酔閑吟](https://github.com/Jint-lzxy)
 
-- 来都来了，给颗小星星或者关注支持一下吧（
-
 - 使用到的第三方库（`.gitmodules`还没整好最近补上awwww（
   - luafilesystem
   - luacjson
