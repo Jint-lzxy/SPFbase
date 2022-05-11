@@ -9,7 +9,7 @@
 #define LOGSYS_PRODUCT APP_PRODUCT
 #define LOGSYS_LOGFILE L"log.txt"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	bool checkDirectory(std::wstring& out) {
 		bool ok = false;
 		std::wstring path; // APPDATA

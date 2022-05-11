@@ -108,8 +108,8 @@
 // #define LSHOWFONTBASELINE  // 显示文字基线
 #define LPERFORMANCEUPDATETIMER 0.25f  // 刷新一次计数器（间隔：秒）
 
-#define LAPP (LuaSTGPlus::AppFrame::GetInstance())
-#define LLOGGER (LuaSTGPlus::LogSystem::GetInstance())
+#define LAPP (SPFbase::AppFrame::GetInstance())
+#define LLOGGER (SPFbase::LogSystem::GetInstance())
 #define LPOOL (LAPP.GetGameObjectPool())
 #define LRES (LAPP.GetResourceMgr())
 #define LFMGR (LAPP.GetFileManager())
@@ -117,9 +117,9 @@
 
 #define LWIDE_(x) L ## x
 #define LWIDE(x) LWIDE_(x)
-#define LERROR(info, ...) LLOGGER.Log(LuaSTGPlus::LogType::Error, L##info, __VA_ARGS__)
-#define LWARNING(info, ...) LLOGGER.Log(LuaSTGPlus::LogType::Warning, L##info, __VA_ARGS__)
-#define LINFO(info, ...) LLOGGER.Log(LuaSTGPlus::LogType::Information, L##info, __VA_ARGS__)
+#define LERROR(info, ...) LLOGGER.Log(SPFbase::LogType::Error, L##info, __VA_ARGS__)
+#define LWARNING(info, ...) LLOGGER.Log(SPFbase::LogType::Warning, L##info, __VA_ARGS__)
+#define LINFO(info, ...) LLOGGER.Log(SPFbase::LogType::Information, L##info, __VA_ARGS__)
 
 #ifdef LDEBUG
 #define LASSERT(cond) \
@@ -145,7 +145,7 @@
 
 #define LSOUNDGLOBALFOCUS  true
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	class AppFrame;
 }

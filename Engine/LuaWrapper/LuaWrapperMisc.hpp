@@ -5,7 +5,7 @@
 #include "..\ResourceParticle.hpp"
 #include "..\LuaStringToEnum.hpp"
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	//注册方法和元方法到名字为name的库和元表中，并保护元表不被修改
 	inline void RegisterMethodD(lua_State* L, const char* name, luaL_Reg* method, luaL_Reg* metamethod) {

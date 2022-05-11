@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include <string>
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	const std::string& LuaInternalSource_1();
 }

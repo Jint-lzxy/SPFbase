@@ -1,7 +1,7 @@
 ﻿#include "..\LuaWrapper.hpp"
 #include "..\..\AppFrame.h"
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	namespace LuaWrapper
 	{

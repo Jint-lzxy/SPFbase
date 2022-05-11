@@ -1,7 +1,7 @@
 ﻿#include <string>
 #include "..\LuaWrapper.hpp"
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	namespace LuaWrapper
 	{

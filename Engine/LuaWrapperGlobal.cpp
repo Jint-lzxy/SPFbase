@@ -22,7 +22,7 @@
 #endif
 
 using namespace std;
-using namespace LuaSTGPlus;
+using namespace SPFbase;
 
 void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 {
@@ -84,26 +84,26 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 		static int Log(lua_State* L)LNOEXCEPT
 		{
 			lua_Integer _level = luaL_checkinteger(L, 1);
-			LuaSTGPlus::LogType level = LuaSTGPlus::LogType::Information;
+			SPFbase::LogType level = SPFbase::LogType::Information;
 			switch (_level)
 			{
 			case 1:
-				level = LuaSTGPlus::LogType::Debug;
+				level = SPFbase::LogType::Debug;
 				break;
 			case 2:
-				level = LuaSTGPlus::LogType::Information;
+				level = SPFbase::LogType::Information;
 				break;
 			case 3:
-				level = LuaSTGPlus::LogType::Warning;
+				level = SPFbase::LogType::Warning;
 				break;
 			case 4:
-				level = LuaSTGPlus::LogType::Error;
+				level = SPFbase::LogType::Error;
 				break;
 			case 5:
-				level = LuaSTGPlus::LogType::Fatal;
+				level = SPFbase::LogType::Fatal;
 				break;
 			default:
-				level = LuaSTGPlus::LogType::Information;
+				level = SPFbase::LogType::Information;
 				break;
 			}
 			try {
@@ -155,7 +155,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 		static int LoadPackSub(lua_State* L)LNOEXCEPT
 		{
 			const char* p = luaL_checkstring(L, 1);
-			std::string pw = LuaSTGPlus::GetGameName();
+			std::string pw = SPFbase::GetGameName();
 			if (!LFMGR.LoadArchive(p, 0, pw.c_str()))
 				LWARNING("无法装载资源包'%m'，文件不存在或不是合法的资源包格式", p);
 			return 0;
@@ -855,7 +855,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 				lua_pushboolean(L, result);
 			}
 			else {
-				using sw = LuaSTGPlus::LuaWrapper::IO::StreamWrapper::Wrapper;
+				using sw = SPFbase::LuaWrapper::IO::StreamWrapper::Wrapper;
 				sw* data = (sw*)luaL_checkudata(L, 2, LUASTG_LUA_TYPENAME_IO_STREAM);
 				bool result = pActivedPool->LoadTTFFont(name, data->handle, (float)luaL_checknumber(L, 3), (float)luaL_checknumber(L, 4), (float)luaL_optnumber(L, 5, 0.0), (float)luaL_optnumber(L, 6, 0.0));
 				lua_pushboolean(L, result);

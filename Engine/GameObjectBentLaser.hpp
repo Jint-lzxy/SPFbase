@@ -5,7 +5,7 @@
 
 #define LGOBJ_MAXLASERNODE 512  // 曲线激光最大节点数
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	class GameObjectBentLaser
 	{

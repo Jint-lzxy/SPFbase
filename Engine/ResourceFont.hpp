@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "ResourceBase.hpp"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	// 纹理字体
 	class ResFont :
 		public Resource

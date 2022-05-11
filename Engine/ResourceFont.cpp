@@ -11,7 +11,7 @@
 
 using namespace std;
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	void ResFont::HGEFont::ReadDefine(const std::wstring& data, std::unordered_map<wchar_t, f2dGlyphInfo>& out, std::wstring& tex)
 	{
 		out.clear();

@@ -13,7 +13,7 @@
 #endif
 
 using namespace std;
-using namespace LuaSTGPlus;
+using namespace SPFbase;
 
 #if (defined LDEVVERSION) || (defined LDEBUG)
 #define LDEBUG_RESOURCETIMER float tResourceLoadingTime

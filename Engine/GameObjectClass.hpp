@@ -5,7 +5,7 @@
 #define LOBJ_CLASS_RENDERCLASS     ".render"
 #define LOBJ_CLASS_DEFAULTFUNCTION "default_function"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	struct GameObjectClass {
 		bool IsDefaultUpdate;
 		bool IsDefaultRender;

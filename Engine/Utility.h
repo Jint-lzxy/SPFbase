@@ -3,7 +3,7 @@
 #pragma once
 #include "Global.h"
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	///离开作用域自动执行委托的函数
 	class Scope

@@ -3,7 +3,7 @@
 #include "AppFrame.h"
 
 using namespace std;
-using namespace LuaSTGPlus;
+using namespace SPFbase;
 
 void XInputManagerWrapper::Register(lua_State* L)LNOEXCEPT
 {

@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Global.h"
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	/// @brief 定长对象池
 	template <typename T, size_t AllocCount>

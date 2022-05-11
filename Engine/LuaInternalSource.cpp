@@ -16,7 +16,7 @@ function FocusGainFunc()
 end
 )";
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	const std::string& LuaInternalSource_1() {
 		return _InternalSource_1;
 	}

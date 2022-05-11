@@ -8,9 +8,9 @@
 #undef max
 #endif
 
-using HSVColor = LuaSTGPlus::LuaWrapper::ColorWrapper::HSVColor;
+using HSVColor = SPFbase::LuaWrapper::ColorWrapper::HSVColor;
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	namespace LuaWrapper
 	{

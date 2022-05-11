@@ -6,7 +6,7 @@
 #include "steam_api.h"
 #endif // USING_STEAM_API
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	bool SteamAPI_Init() {
 		#ifdef USING_STEAM_API
 			#ifdef KEEP_LAUNCH_BY_STEAM

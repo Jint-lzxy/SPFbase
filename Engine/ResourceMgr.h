@@ -14,7 +14,7 @@
 #undef LoadImage
 #endif
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	class ResourceMgr;
 

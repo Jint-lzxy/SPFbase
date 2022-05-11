@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Global.h"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	// 资源类型
 	enum class ResourceType
 	{

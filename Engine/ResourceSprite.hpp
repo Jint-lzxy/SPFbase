@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "ResourceBase.hpp"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	/// @brief 图像资源
 	class ResSprite :
 		public Resource

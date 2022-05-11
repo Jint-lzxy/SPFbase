@@ -3,7 +3,7 @@
 #include "ResourceMgr.h"
 #include "Bencode.h"
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	/// @brief 远端调试器客户端
 	class RemoteDebuggerClient

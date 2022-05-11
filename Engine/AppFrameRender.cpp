@@ -1,6 +1,6 @@
 ﻿#include "AppFrame.h"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	void AppFrame::updateGraph2DBlendMode(BlendMode m)
 	{
 		if (m != m_Graph2DLastBlendMode)

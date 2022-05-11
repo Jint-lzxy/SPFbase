@@ -4,7 +4,7 @@
 #include <thread>
 #include <GdiPlus.h>
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	/// @brief 载入窗口
 	class SplashWindow

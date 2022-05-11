@@ -11,7 +11,7 @@
 
 using namespace std;
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	ResFX::ResFX(const char* name, fcyRefPointer<f2dEffect> shader)
 		: Resource(ResourceType::FX, name), m_pShader(shader)
 	{

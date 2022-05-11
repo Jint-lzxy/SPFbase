@@ -20,7 +20,7 @@
 	} while (false)
 
 using namespace std;
-using namespace LuaSTGPlus;
+using namespace SPFbase;
 
 GameObjectPool::GameObjectPool(lua_State* pL)
 {
@@ -332,7 +332,7 @@ void GameObjectPool::CollisionCheck(size_t groupA, size_t groupB)LNOEXCEPT
 #ifdef USING_MULTI_GAME_WORLD
 			if (CheckWorlds(pA->world, pB->world)) {
 #endif // USING_MULTI_GAME_WORLD
-				if (LuaSTGPlus::CollisionCheck(pA, pB))
+				if (SPFbase::CollisionCheck(pA, pB))
 				{
 					m_pCurrentObject = pA;
 					// 根据id获取对象的lua绑定table、拿到class再拿到collifunc
@@ -555,12 +555,12 @@ bool GameObjectPool::ColliCheck(size_t idA, size_t idB, bool ignoreWorldMask, bo
 #ifdef USING_MULTI_GAME_WORLD
 	if (ignoreWorldMask) {
 #endif // USING_MULTI_GAME_WORLD
-		out = LuaSTGPlus::CollisionCheck(pA, pB);
+		out = SPFbase::CollisionCheck(pA, pB);
 #ifdef USING_MULTI_GAME_WORLD
 	}
 	else{
 		if (CheckWorlds(pA->world, pB->world)) {
-			out = LuaSTGPlus::CollisionCheck(pA, pB);
+			out = SPFbase::CollisionCheck(pA, pB);
 		}
 		else {
 			out = false;//不在同一个world

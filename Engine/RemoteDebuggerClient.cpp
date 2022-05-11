@@ -2,7 +2,7 @@
 
 using namespace std;
 using namespace Bencode;
-using namespace LuaSTGPlus;
+using namespace SPFbase;
 
 #if (defined LDEVVERSION) || (defined LDEBUG)
 

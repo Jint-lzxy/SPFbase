@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Global.h"
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	template <typename T, size_t MaxSize>
 	class CirularQueue

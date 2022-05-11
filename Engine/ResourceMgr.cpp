@@ -10,7 +10,7 @@
 #include "E2DFilePath.hpp"
 
 using namespace std;
-using namespace LuaSTGPlus;
+using namespace SPFbase;
 
 ResourceMgr::ResourceMgr()
 	: m_GlobalResourcePool(this, ResourcePoolType::Global), m_StageResourcePool(this, ResourcePoolType::Stage)

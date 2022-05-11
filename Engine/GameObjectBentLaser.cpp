@@ -2,7 +2,7 @@
 #include "AppFrame.h"
 
 using namespace std;
-using namespace LuaSTGPlus;
+using namespace SPFbase;
 
 //======================================
 
@@ -443,7 +443,7 @@ bool GameObjectBentLaser::CollisionCheck(float x, float y, float rot, float a, f
 					testObjA.a = df / 2;
 					testObjA.b = n.half_width;
 					testObjA.UpdateCollisionCirclrRadius();
-					if (LuaSTGPlus::CollisionCheck(&testObjA, &testObjB))
+					if (SPFbase::CollisionCheck(&testObjA, &testObjB))
 						return true;
 
 				}
@@ -455,7 +455,7 @@ bool GameObjectBentLaser::CollisionCheck(float x, float y, float rot, float a, f
 		testObjA.a = testObjA.b = n.half_width * _GetEnvelope((float)i / (float)(sn - 1u)); //n.half_width;
 		testObjA.rect = false;
 		testObjA.UpdateCollisionCirclrRadius();
-		if (LuaSTGPlus::CollisionCheck(&testObjA, &testObjB))
+		if (SPFbase::CollisionCheck(&testObjA, &testObjB))
 			return true;
 	}
 	return false;
@@ -501,7 +501,7 @@ bool GameObjectBentLaser::CollisionCheckW(float x, float y, float rot, float a, 
 					testObjA.a = df / 2;
 					testObjA.b = width;
 					testObjA.UpdateCollisionCirclrRadius();
-					if (LuaSTGPlus::CollisionCheck(&testObjA, &testObjB))
+					if (SPFbase::CollisionCheck(&testObjA, &testObjB))
 						return true;
 
 				}
@@ -513,7 +513,7 @@ bool GameObjectBentLaser::CollisionCheckW(float x, float y, float rot, float a, 
 		testObjA.a = testObjA.b = width;
 		testObjA.rect = false;
 		testObjA.UpdateCollisionCirclrRadius();
-		if (LuaSTGPlus::CollisionCheck(&testObjA, &testObjB))
+		if (SPFbase::CollisionCheck(&testObjA, &testObjB))
 			return true;
 	}
 	return false;

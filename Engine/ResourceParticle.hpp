@@ -1,7 +1,7 @@
 #pragma once
 #include "ResourceBase.hpp"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	// 粒子系统
 	// HGE粒子系统的f2d实现
 	class ResParticle :

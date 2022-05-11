@@ -2,7 +2,7 @@
 #include "ResourceBase.hpp"
 #include "ResourceTexture.hpp"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	// 动画资源
 	class ResAnimation :
 		public Resource

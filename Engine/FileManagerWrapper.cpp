@@ -12,7 +12,7 @@
 #endif
 
 using namespace std;
-using namespace LuaSTGPlus;
+using namespace SPFbase;
 
 void FileManagerWrapper::Register(lua_State* L)LNOEXCEPT {
 	

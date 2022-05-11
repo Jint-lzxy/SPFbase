@@ -11,8 +11,8 @@
 
 using namespace std;
 
-namespace LuaSTGPlus {
-	fcyMemPool<sizeof(LuaSTGPlus::ResParticle::ParticlePool)> LuaSTGPlus::ResParticle::s_MemoryPool(512);  // 预分配512个对象
+namespace SPFbase {
+	fcyMemPool<sizeof(SPFbase::ResParticle::ParticlePool)> SPFbase::ResParticle::s_MemoryPool(512);  // 预分配512个对象
 
 	ResParticle::ResParticle(const char* name, const ParticleInfo& pinfo, fcyRefPointer<f2dSprite> sprite, BlendMode bld, double a, double b, bool rect)
 		: Resource(ResourceType::Particle, name), m_ParticleInfo(pinfo), m_BindedSprite(sprite), m_BlendMode(bld), m_HalfSizeX(a), m_HalfSizeY(b), m_bRectangle(rect)

@@ -1,7 +1,7 @@
 ﻿#include "ResourceAnimation.hpp"
 #include "AppFrame.h" // 用于创建图片精灵
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	ResAnimation::ResAnimation(const char* name, fcyRefPointer<ResTexture> tex,
 		float x, float y, float w, float h,
 		int n, int m, int intv,

@@ -2,7 +2,7 @@
 #include "ResourceBase.hpp"
 #include "E2DMath.hpp"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	// 声音资源
 	/*
 	class ResAudio :

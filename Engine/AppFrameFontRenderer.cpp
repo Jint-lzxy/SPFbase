@@ -1,6 +1,6 @@
 ﻿#include "AppFrame.h"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	bool AppFrame::FontRenderer_SetFontProvider(const char* name) {
 		fcyRefPointer<ResFont> p = m_ResourceMgr.FindTTFFont(name);
 		if (!p)

@@ -2,7 +2,7 @@
 #include "ResourceBase.hpp"
 #include "Dictionary.hpp"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	// shader°ü×°
 	class ResFX :
 		public Resource

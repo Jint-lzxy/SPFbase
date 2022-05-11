@@ -80,7 +80,7 @@ namespace Xrysnow {
 	// BlendMode 枚举
 
 	//字符串转混合模式枚举
-	LuaSTGPlus::BlendMode BlendModeHash(lua_State* L, int index);
+	SPFbase::BlendMode BlendModeHash(lua_State* L, int index);
 
 	// Color 包装器
 

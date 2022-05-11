@@ -2,7 +2,7 @@
 #include <string>
 #include "lua.hpp"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	struct game_option {
 		std::string main_script = "src/main.lua";	// main
 		std::string window_name = "LuaSTG";			// title

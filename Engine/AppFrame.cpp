@@ -27,7 +27,7 @@ extern "C" int luaopen_lfs(lua_State *L);
 extern "C" int luaopen_cjson(lua_State* L);
 
 using namespace std;
-using namespace LuaSTGPlus;
+using namespace SPFbase;
 
 #ifdef LSHOWFONTBASELINE
 class FontBaseLineDebugHelper :
@@ -1762,7 +1762,7 @@ bool AppFrame::SafeCallScript(const char* source, size_t len, const char* desc)L
 			MessageBox(
 				m_pMainWindow ? (HWND)m_pMainWindow->GetHandle() : 0,
 				tErrorInfo.c_str(),
-				L"LuaSTGPlus脚本错误",
+				L"SPFbase脚本错误",
 				MB_ICONERROR | MB_OK
 			);
 		}
@@ -1789,7 +1789,7 @@ bool AppFrame::SafeCallScript(const char* source, size_t len, const char* desc)L
 			MessageBox(
 				m_pMainWindow ? (HWND)m_pMainWindow->GetHandle() : 0,
 				tErrorInfo.c_str(),
-				L"LuaSTGPlus脚本错误",
+				L"SPFbase脚本错误",
 				MB_ICONERROR | MB_OK
 			);
 		}
@@ -1826,7 +1826,7 @@ bool AppFrame::SafeCallGlobalFunction(const char* name, int retc)LNOEXCEPT
 			MessageBox(
 				m_pMainWindow ? (HWND)m_pMainWindow->GetHandle() : 0,
 				tErrorInfo.c_str(),
-				L"LuaSTGPlus脚本错误",
+				L"SPFbase脚本错误",
 				MB_ICONERROR | MB_OK
 			);
 		}

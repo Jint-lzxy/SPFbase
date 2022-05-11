@@ -2,7 +2,7 @@
 #include "Global.h"
 #include <fcyMath.h>
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	inline void SinCos(float ang, float& fSin, float& fCos)
 	{

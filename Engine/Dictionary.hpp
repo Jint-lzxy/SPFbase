@@ -3,7 +3,7 @@
 #pragma once
 #include "Global.h"
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	/// @brief MPQHash表
 	class MPQHashCryptTable

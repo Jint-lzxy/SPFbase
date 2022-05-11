@@ -5,7 +5,7 @@
 #include "ResourceMgr.h"
 #include "GameObject.hpp"
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	//游戏对象池
 	class GameObjectPool

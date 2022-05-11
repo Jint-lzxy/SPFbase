@@ -5,7 +5,7 @@
 #include "ResourceParticle.hpp"
 #include "GameObjectClass.hpp"
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	// 游戏对象状态
 	enum GAMEOBJECTSTATUS

@@ -9,7 +9,7 @@
 #include "Network.h"
 
 using namespace std;
-using namespace LuaSTGPlus;
+using namespace SPFbase;
 
 //======================================
 //ex+网络传输
@@ -986,7 +986,7 @@ void ObjModel::initTextures() {
 }
 
 void ObjModel::render() {
-	LAPP.RenderTexture(tex.c_str(), LuaSTGPlus::BlendMode::MulAlpha, vcount, vertices, icount, indices);
+	LAPP.RenderTexture(tex.c_str(), SPFbase::BlendMode::MulAlpha, vcount, vertices, icount, indices);
 }
 
 

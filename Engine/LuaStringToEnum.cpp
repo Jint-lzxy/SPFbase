@@ -70,27 +70,27 @@ void init_prop_hash_map(lua_State* L) {
 	}
 }
 
-static std::unordered_map<std::string, LuaSTGPlus::BlendMode> blendmode_map = {
-	{ "mul+alpha",	LuaSTGPlus::BlendMode::MulAlpha		},
-	{ "mul+add",	LuaSTGPlus::BlendMode::MulAdd		},
-	{ "mul+rev",	LuaSTGPlus::BlendMode::MulRev		},
-	{ "mul+sub",	LuaSTGPlus::BlendMode::MulSub		},
-	{ "add+alpha",	LuaSTGPlus::BlendMode::AddAlpha		},
-	{ "add+add",	LuaSTGPlus::BlendMode::AddAdd		},
-	{ "add+rev",	LuaSTGPlus::BlendMode::AddRev		},
-	{ "add+sub",	LuaSTGPlus::BlendMode::AddSub		},
-	{ "alpha+bal",	LuaSTGPlus::BlendMode::AlphaBal		},
-	{ "mul+min",	LuaSTGPlus::BlendMode::MulMin		},
-	{ "mul+max",	LuaSTGPlus::BlendMode::MulMax		},
-	{ "mul+mul",	LuaSTGPlus::BlendMode::MulMutiply	},
-	{ "mul+screen",	LuaSTGPlus::BlendMode::MulScreen	},
-	{ "add+min",	LuaSTGPlus::BlendMode::AddMin		},
-	{ "add+max",	LuaSTGPlus::BlendMode::AddMax		},
-	{ "add+mul",	LuaSTGPlus::BlendMode::AddMutiply	},
-	{ "add+screen",	LuaSTGPlus::BlendMode::AddScreen	},
-	{ "one",		LuaSTGPlus::BlendMode::One			},
+static std::unordered_map<std::string, SPFbase::BlendMode> blendmode_map = {
+	{ "mul+alpha",	SPFbase::BlendMode::MulAlpha		},
+	{ "mul+add",	SPFbase::BlendMode::MulAdd		},
+	{ "mul+rev",	SPFbase::BlendMode::MulRev		},
+	{ "mul+sub",	SPFbase::BlendMode::MulSub		},
+	{ "add+alpha",	SPFbase::BlendMode::AddAlpha		},
+	{ "add+add",	SPFbase::BlendMode::AddAdd		},
+	{ "add+rev",	SPFbase::BlendMode::AddRev		},
+	{ "add+sub",	SPFbase::BlendMode::AddSub		},
+	{ "alpha+bal",	SPFbase::BlendMode::AlphaBal		},
+	{ "mul+min",	SPFbase::BlendMode::MulMin		},
+	{ "mul+max",	SPFbase::BlendMode::MulMax		},
+	{ "mul+mul",	SPFbase::BlendMode::MulMutiply	},
+	{ "mul+screen",	SPFbase::BlendMode::MulScreen	},
+	{ "add+min",	SPFbase::BlendMode::AddMin		},
+	{ "add+max",	SPFbase::BlendMode::AddMax		},
+	{ "add+mul",	SPFbase::BlendMode::AddMutiply	},
+	{ "add+screen",	SPFbase::BlendMode::AddScreen	},
+	{ "one",		SPFbase::BlendMode::One			},
 };
-static std::unordered_map<uint32_t, LuaSTGPlus::BlendMode> blendmode_hash_map;
+static std::unordered_map<uint32_t, SPFbase::BlendMode> blendmode_hash_map;
 void init_blendmode_hash_map(lua_State* L) {
 	blendmode_hash_map.clear();
 	for (auto it : blendmode_map)
@@ -160,13 +160,13 @@ namespace Xrysnow {
 
 	// BlendMode 枚举
 
-	LuaSTGPlus::BlendMode BlendModeHash(lua_State* L, int index) {
+	SPFbase::BlendMode BlendModeHash(lua_State* L, int index) {
 		const auto s = lua_tolstring(L, index, nullptr);
 		const auto hash = ((uint32_t*)s)[HASH_OFFSET];
 		const auto it = blendmode_hash_map.find(hash);
 		if (it != blendmode_hash_map.end())
 			return it->second;
-		return LuaSTGPlus::BlendMode::_KEY_NOT_FOUND;
+		return SPFbase::BlendMode::_KEY_NOT_FOUND;
 	}
 	
 	// Color 包装器

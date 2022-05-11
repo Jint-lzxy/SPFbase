@@ -1,7 +1,7 @@
 ﻿#include "LuaWrapper.hpp"
 #include "../Utility.h"
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	namespace LuaWrapper
 	{
@@ -11,7 +11,7 @@ namespace LuaSTGPlus
 				static int GetLocalAppDataPath(lua_State* L)LNOEXCEPT
 				{
 					try {
-						std::string path = fcyStringHelper::WideCharToMultiByte(LuaSTGPlus::GetLocalAppDataPath(), CP_UTF8);
+						std::string path = fcyStringHelper::WideCharToMultiByte(SPFbase::GetLocalAppDataPath(), CP_UTF8);
 						lua_pushstring(L, path.c_str());
 					}
 					catch (const std::bad_alloc&) {
@@ -22,7 +22,7 @@ namespace LuaSTGPlus
 				static int GetRoamingAppDataPath(lua_State* L)LNOEXCEPT
 				{
 					try {
-						std::string path = fcyStringHelper::WideCharToMultiByte(LuaSTGPlus::GetRoamingAppDataPath(), CP_UTF8);
+						std::string path = fcyStringHelper::WideCharToMultiByte(SPFbase::GetRoamingAppDataPath(), CP_UTF8);
 						lua_pushstring(L, path.c_str());
 					}
 					catch (const std::bad_alloc&) {

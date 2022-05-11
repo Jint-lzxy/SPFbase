@@ -1,7 +1,7 @@
 ﻿#include "UnicodeStringEncoding.h"
 
 using namespace std;
-using namespace LuaSTGPlus;
+using namespace SPFbase;
 
 class Utf8Decoder
 {
@@ -272,7 +272,7 @@ void Convert(const orgchar_t* nullTerminatedString, std::basic_string<char_t>& r
 		ret.push_back((char_t)'?');
 }
 
-std::wstring LuaSTGPlus::Utf8ToUtf16(const char* p)
+std::wstring SPFbase::Utf8ToUtf16(const char* p)
 {
 	wstring tRet;
 	tRet.reserve(128);
@@ -280,7 +280,7 @@ std::wstring LuaSTGPlus::Utf8ToUtf16(const char* p)
 	return tRet;
 }
 
-std::string LuaSTGPlus::Utf16ToUtf8(const wchar_t* p)
+std::string SPFbase::Utf16ToUtf8(const wchar_t* p)
 {
 	string tRet;
 	tRet.reserve(128);
@@ -288,13 +288,13 @@ std::string LuaSTGPlus::Utf16ToUtf8(const wchar_t* p)
 	return tRet;
 }
 
-void LuaSTGPlus::Utf8ToUtf16(const char* p, std::wstring& ret)
+void SPFbase::Utf8ToUtf16(const char* p, std::wstring& ret)
 {
 	ret.clear();
 	Convert<Utf8Decoder, Utf16Encoder, wchar_t>(p, ret);
 }
 
-void LuaSTGPlus::Utf16ToUtf8(const wchar_t* p, std::string& ret)
+void SPFbase::Utf16ToUtf8(const wchar_t* p, std::string& ret)
 {
 	ret.clear();
 	Convert<Utf16Decoder, Utf8Encoder>(p, ret);

@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "ResourceBase.hpp"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	// 纹理资源
 	class ResTexture :
 		public Resource

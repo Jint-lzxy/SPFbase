@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "ResourceBase.hpp"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	// 模型资源
 	class ResModel :
 		public Resource

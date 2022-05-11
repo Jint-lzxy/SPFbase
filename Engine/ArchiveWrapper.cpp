@@ -7,7 +7,7 @@
 #include "E2DFileManager.hpp"
 
 using namespace std;
-using namespace LuaSTGPlus;
+using namespace SPFbase;
 using namespace Eyes2D::IO;
 
 struct ArchiveWrapper::Wrapper {
@@ -184,7 +184,7 @@ void ArchiveWrapper::Register(lua_State* L)LNOEXCEPT {
 		{ NULL, NULL }
 	};
 	
-	LuaSTGPlus::RegisterMethodD(L, LUASTG_LUA_TYPENAME_ARCHIVE, tMethods, tMetaTable);
+	SPFbase::RegisterMethodD(L, LUASTG_LUA_TYPENAME_ARCHIVE, tMethods, tMetaTable);
 }
 
 void ArchiveWrapper::CreateAndPush(lua_State* L, unsigned int uid)LNOEXCEPT {

@@ -93,7 +93,7 @@ static int package_loader_luastg(lua_State* L) {
     return 1;  /* library loaded successfully */
 }
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	void lua_register_custom_loader(lua_State* L) {
         lua_getglobal(L, "package");                         // ??? t
         if (lua_istable(L, -1)) {

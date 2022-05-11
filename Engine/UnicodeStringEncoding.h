@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Global.h"
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	std::wstring Utf8ToUtf16(const char* p);
 	std::string Utf16ToUtf8(const wchar_t* p);

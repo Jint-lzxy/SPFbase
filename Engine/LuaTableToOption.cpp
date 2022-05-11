@@ -1,6 +1,6 @@
 ﻿#include "LuaTableToOption.hpp"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	game_option read_game_option_from_index(lua_State* L, int index) {
 		// ?
 		game_option op;

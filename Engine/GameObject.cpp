@@ -3,7 +3,7 @@
 #include "ResourceSprite.hpp"
 #include "ResourceAnimation.hpp"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	void GameObject::Reset() {
 		status = (GAMEOBJECTSTATUS)STATUS_FREE;
 		id = (size_t)-1;

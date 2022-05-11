@@ -2,7 +2,7 @@
 #include <string>
 #include <fstream>
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	enum class LogType {
 		Debug,
 		Information,

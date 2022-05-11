@@ -16,7 +16,7 @@
 #include "E2DFileManager.hpp"
 #include "E2DXInputImpl.hpp"
 
-namespace LuaSTGPlus
+namespace SPFbase
 {
 	/// @brief 应用程序状态
 	enum class AppStatus

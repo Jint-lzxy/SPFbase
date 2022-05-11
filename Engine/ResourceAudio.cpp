@@ -1,6 +1,6 @@
 ﻿#include "ResourceAudio.hpp"
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	fResult ResMusic::BGMWrapper::Read(fData pBuffer, fuInt SizeToRead, fuInt* pSizeRead)
 	{
 		fResult tFR;

@@ -2,11 +2,11 @@
 
 #include "resource.h"
 
-#define CLASSNAME TEXT("LUASTGPLUS_SPLASHWINDOW")
+#define CLASSNAME TEXT("SPFbase_SPLASHWINDOW")
 
 using namespace std;
 using namespace Gdiplus;
-using namespace LuaSTGPlus;
+using namespace SPFbase;
 
 Gdiplus::Image* SplashWindow::LoadImageFromMemory(fcData data, size_t len)
 {

@@ -1,7 +1,7 @@
 #pragma once
 #include <Windows.h>
 
-namespace LuaSTGPlus {
+namespace SPFbase {
 	inline bool CheckRuntime() {
 		const wchar_t* dlls[] = {
 			L"D3D9.dll",

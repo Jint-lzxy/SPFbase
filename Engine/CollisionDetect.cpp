@@ -1,9 +1,9 @@
 ﻿#include "CollisionDetect.h"
 
 using namespace std;
-using namespace LuaSTGPlus;
+using namespace SPFbase;
 
-bool LuaSTGPlus::OBBHitTest(fcyVec2 P1, fcyVec2 Size1, float Angle1,
+bool SPFbase::OBBHitTest(fcyVec2 P1, fcyVec2 Size1, float Angle1,
 							fcyVec2 P2, fcyVec2 Size2, float Angle2)
 {
 	// 计算出矩形的4个顶点
@@ -98,7 +98,7 @@ bool LuaSTGPlus::OBBHitTest(fcyVec2 P1, fcyVec2 Size1, float Angle1,
 	return true;
 }
 
-bool LuaSTGPlus::OBBCircleHitTest(	fcyVec2 P1, fcyVec2 Size, float Angle,
+bool SPFbase::OBBCircleHitTest(	fcyVec2 P1, fcyVec2 Size, float Angle,
 									fcyVec2 P2, float R)
 {
 	// 计算出矩形的4个顶点
@@ -183,7 +183,7 @@ bool LuaSTGPlus::OBBCircleHitTest(	fcyVec2 P1, fcyVec2 Size, float Angle,
 	return false;
 }
 
-bool LuaSTGPlus::OBBAABBHitTest(fcyVec2 P, fcyVec2 Size, float Angle, fcyRect Rect)
+bool SPFbase::OBBAABBHitTest(fcyVec2 P, fcyVec2 Size, float Angle, fcyRect Rect)
 {
 	// 计算出OBB矩形的4个顶点
 	fcyVec2 tFinalPos[2][4] =
@@ -264,7 +264,7 @@ bool LuaSTGPlus::OBBAABBHitTest(fcyVec2 P, fcyVec2 Size, float Angle, fcyRect Re
 	return true;
 }
 
-bool LuaSTGPlus::ElliTestPoint(fcyVec2 P1, float a1, float b1, float rot1, fcyVec2 P2)
+bool SPFbase::ElliTestPoint(fcyVec2 P1, float a1, float b1, float rot1, fcyVec2 P2)
 {
 	if (a1 == b1){
 		return (P1 - P2).Length2() < a1*a1;
@@ -276,7 +276,7 @@ bool LuaSTGPlus::ElliTestPoint(fcyVec2 P1, float a1, float b1, float rot1, fcyVe
 	return P12.Length2() < 1;
 }
 
-bool LuaSTGPlus::ElliTest(fcyVec2 P1, float a1, float b1, float rot1, fcyVec2 P2, float a2, float b2, float rot2)
+bool SPFbase::ElliTest(fcyVec2 P1, float a1, float b1, float rot1, fcyVec2 P2, float a2, float b2, float rot2)
 {
 	if (a1 == b1){
 		if (a2 == b2){
