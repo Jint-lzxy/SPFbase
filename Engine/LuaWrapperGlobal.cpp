@@ -277,10 +277,10 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 		static int ResetObject(lua_State* L)LNOEXCEPT
 		{
 			if (!lua_istable(L, 1))
-				return luaL_error(L, "Invalid lstg.GameObject for 'ResetObject'.");
+				return luaL_error(L, "Invalid spfbase.GameObject for 'ResetObject'.");
 			lua_rawgeti(L, 1, 2);  // t(object) ??? id
 			if (!LPOOL.DirtResetObject((size_t)luaL_checkinteger(L, -1)))
-				return luaL_error(L, "invalid lstg.GameObject for 'ResetObject'.");
+				return luaL_error(L, "invalid spfbase.GameObject for 'ResetObject'.");
 			return 0;
 		}
 		static int New(lua_State* L)LNOEXCEPT
@@ -304,12 +304,12 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 			if (lua_gettop(L) == 2)
 			{
 				if (!lua_istable(L, 1) || !lua_istable(L, 2))
-					return luaL_error(L, "invalid lstg object for 'Angle'.");
+					return luaL_error(L, "invalid spfbase object for 'Angle'.");
 				lua_rawgeti(L, 1, 2);  // t(object) t(object) ??? id
 				lua_rawgeti(L, 2, 2);  // t(object) t(object) ??? id id
 				double tRet;
 				if (!LPOOL.Angle((size_t)luaL_checkint(L, -2), (size_t)luaL_checkint(L, -1), tRet))
-					return luaL_error(L, "invalid lstg object for 'Angle'.");
+					return luaL_error(L, "invalid spfbase object for 'Angle'.");
 				lua_pushnumber(L, tRet);
 			}
 			else if (lua_gettop(L) == 3) {
@@ -319,7 +319,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 					lua_rawgeti(L, 1, 2);  // t(object) x y ??? id
 					GameObject* p = LPOOL.GetPooledObject((size_t)luaL_checkint(L, -1));
 					if (!p) {
-						return luaL_error(L, "invalid lstg object for 'Angle'.");
+						return luaL_error(L, "invalid spfbase object for 'Angle'.");
 					}
 					lua_pushnumber(L,
 						atan2(luaL_checknumber(L, 3) - p->y, luaL_checknumber(L, 2) - p->x) * LRAD2DEGREE
@@ -330,14 +330,14 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 					lua_rawgeti(L, 3, 2);  // x y t(object) ??? id
 					GameObject* p = LPOOL.GetPooledObject((size_t)luaL_checkint(L, -1));
 					if (!p) {
-						return luaL_error(L, "invalid lstg object for 'Angle'.");
+						return luaL_error(L, "invalid spfbase object for 'Angle'.");
 					}
 					lua_pushnumber(L,
 						atan2(p->y - luaL_checknumber(L, 2), p->x - luaL_checknumber(L, 1)) * LRAD2DEGREE
 					);
 				}
 				else {
-					return luaL_error(L, "invalid lstg object for 'Angle'.");
+					return luaL_error(L, "invalid spfbase object for 'Angle'.");
 				}
 			}
 			else
@@ -352,7 +352,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 			//对两个对象进行单独的碰撞检测
 			// t(object) t(object) ???
 			if (!lua_istable(L, 1) || !lua_istable(L, 2))
-				return luaL_error(L, "invalid lstg object for 'ColliCheck'.");
+				return luaL_error(L, "invalid spfbase object for 'ColliCheck'.");
 			bool ignoreWorldMask = false;
 			if (lua_gettop(L) == 3) {
 				//有第三个参数则检查第三个参数
@@ -363,7 +363,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 			lua_rawgeti(L, 2, 2);
 			bool pass;
 			if (!LPOOL.ColliCheck((size_t)luaL_checkint(L, -2), (size_t)luaL_checkint(L, -1), ignoreWorldMask, pass))
-				return luaL_error(L, "invalid lstg object for 'ColliCheck'.");
+				return luaL_error(L, "invalid spfbase object for 'ColliCheck'.");
 			lua_pushboolean(L, pass);
 			return 1;
 		}
@@ -372,12 +372,12 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 			if (lua_gettop(L) == 2)
 			{
 				if (!lua_istable(L, 1) || !lua_istable(L, 2))
-					return luaL_error(L, "invalid lstg object for 'Dist'.");
+					return luaL_error(L, "invalid spfbase object for 'Dist'.");
 				lua_rawgeti(L, 1, 2);  // t(object) t(object) id
 				lua_rawgeti(L, 2, 2);  // t(object) t(object) id id
 				double tRet;
 				if (!LPOOL.Dist((size_t)luaL_checkint(L, -2), (size_t)luaL_checkint(L, -1), tRet))
-					return luaL_error(L, "invalid lstg object for 'Dist'.");
+					return luaL_error(L, "invalid spfbase object for 'Dist'.");
 				lua_pushnumber(L, tRet);
 			}
 			else if (lua_gettop(L) == 3) {
@@ -387,7 +387,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 					lua_rawgeti(L, 1, 2);  // t(object) x y ??? id
 					GameObject* p = LPOOL.GetPooledObject((size_t)luaL_checkint(L, -1));
 					if (!p) {
-						return luaL_error(L, "invalid lstg object for 'Dist'.");
+						return luaL_error(L, "invalid spfbase object for 'Dist'.");
 					}
 					lua_Number dx = luaL_checknumber(L, 2) - p->x;
 					lua_Number dy = luaL_checknumber(L, 3) - p->y;
@@ -400,7 +400,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 					lua_rawgeti(L, 3, 2);  // x y t(object) ??? id
 					GameObject* p = LPOOL.GetPooledObject((size_t)luaL_checkint(L, -1));
 					if (!p) {
-						return luaL_error(L, "invalid lstg object for 'Dist'.");
+						return luaL_error(L, "invalid spfbase object for 'Dist'.");
 					}
 					lua_Number dx = p->x - luaL_checknumber(L, 1);
 					lua_Number dy = p->y - luaL_checknumber(L, 2);
@@ -409,7 +409,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 					);
 				}
 				else {
-					return luaL_error(L, "invalid lstg object for 'Dist'.");
+					return luaL_error(L, "invalid spfbase object for 'Dist'.");
 				}
 			}
 			else
@@ -423,11 +423,11 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 		static int GetV(lua_State* L)LNOEXCEPT
 		{
 			if (!lua_istable(L, 1))
-				return luaL_error(L, "invalid lstg object for 'GetV'.");
+				return luaL_error(L, "invalid spfbase object for 'GetV'.");
 			double v, a;
 			lua_rawgeti(L, 1, 2);  // t(object) ??? id
 			if (!LPOOL.GetV((size_t)luaL_checkinteger(L, -1), v, a))
-				return luaL_error(L, "invalid lstg object for 'GetV'.");
+				return luaL_error(L, "invalid spfbase object for 'GetV'.");
 			lua_pushnumber(L, v);
 			lua_pushnumber(L, a);
 			return 2;
@@ -435,18 +435,18 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 		static int SetV(lua_State* L)LNOEXCEPT
 		{
 			if (!lua_istable(L, 1))
-				return luaL_error(L, "invalid lstg object for 'SetV'.");
+				return luaL_error(L, "invalid spfbase object for 'SetV'.");
 			if (lua_gettop(L) == 3)
 			{
 				lua_rawgeti(L, 1, 2);  // t(object) 'v' 'a' ??? id
 				if (!LPOOL.SetV((size_t)luaL_checkinteger(L, -1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), false))
-					return luaL_error(L, "invalid lstg object for 'SetV'.");
+					return luaL_error(L, "invalid spfbase object for 'SetV'.");
 			}
 			else if (lua_gettop(L) == 4)
 			{
 				lua_rawgeti(L, 1, 2);  // t(object) 'v' 'a' 'rot' ??? id
 				if (!LPOOL.SetV((size_t)luaL_checkinteger(L, -1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), lua_toboolean(L, 4) == 0 ? false : true))
-					return luaL_error(L, "invalid lstg object for 'SetV'.");
+					return luaL_error(L, "invalid spfbase object for 'SetV'.");
 			}
 			else
 				return luaL_error(L, "invalid argument count for 'SetV'.");
@@ -455,7 +455,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 		static int SetImgState(lua_State* L)LNOEXCEPT
 		{
 			if (!lua_istable(L, 1))
-				return luaL_error(L, "invalid lstg object for 'SetImgState'.");
+				return luaL_error(L, "invalid spfbase object for 'SetImgState'.");
 			lua_rawgeti(L, 1, 2);  // t(object) ??? id
 			size_t id = (size_t)luaL_checkinteger(L, -1);
 			lua_pop(L, 1);
@@ -463,13 +463,13 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 			BlendMode m = TranslateBlendMode(L, 2);
 			fcyColor c(luaL_checkinteger(L, 3), luaL_checkinteger(L, 4), luaL_checkinteger(L, 5), luaL_checkinteger(L, 6));
 			if (!LPOOL.SetImgState(id, m, c))
-				return luaL_error(L, "invalid lstg object for 'SetImgState'.");
+				return luaL_error(L, "invalid spfbase object for 'SetImgState'.");
 			return 0;
 		}
 		static int SetParState(lua_State* L)LNOEXCEPT
 		{
 			if (!lua_istable(L, 1))
-				return luaL_error(L, "invalid lstg object for 'SetParState'.");
+				return luaL_error(L, "invalid spfbase object for 'SetParState'.");
 			lua_rawgeti(L, 1, 2);  // t(object) ??? id
 			size_t id = (size_t)luaL_checkinteger(L, -1);
 			lua_pop(L, 1);
@@ -477,13 +477,13 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 			BlendMode m = TranslateBlendMode(L, 2);
 			fcyColor c(luaL_checkinteger(L, 3), luaL_checkinteger(L, 4), luaL_checkinteger(L, 5), luaL_checkinteger(L, 6));
 			if (!LPOOL.SetParState(id, m, c))
-				return luaL_error(L, "invalid lstg object for 'SetParState'.");
+				return luaL_error(L, "invalid spfbase object for 'SetParState'.");
 			return 0;
 		}
 		static int BoxCheck(lua_State* L)LNOEXCEPT
 		{
 			if (!lua_istable(L, 1))
-				return luaL_error(L, "invalid lstg object for 'BoxCheck'.");
+				return luaL_error(L, "invalid spfbase object for 'BoxCheck'.");
 			lua_rawgeti(L, 1, 2);  // t(object) 'l' 'r' 't' 'b' ??? id
 			bool tRet;
 			if (!LPOOL.BoxCheck(
@@ -494,7 +494,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 				luaL_checknumber(L, 5),
 				tRet))
 			{
-				return luaL_error(L, "invalid lstg object for 'BoxCheck'.");
+				return luaL_error(L, "invalid spfbase object for 'BoxCheck'.");
 			}	
 			lua_pushboolean(L, tRet);
 			return 1;
@@ -507,10 +507,10 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 		static int DefaultRenderFunc(lua_State* L)LNOEXCEPT
 		{
 			if (!lua_istable(L, 1))
-				return luaL_error(L, "invalid lstg object for 'DefaultRenderFunc'.");
+				return luaL_error(L, "invalid spfbase object for 'DefaultRenderFunc'.");
 			lua_rawgeti(L, 1, 2);  // t(object) ??? id
 			if (!LPOOL.DoDefaultRender(luaL_checkinteger(L, -1)))
-				return luaL_error(L, "invalid lstg object for 'DefaultRenderFunc'.");
+				return luaL_error(L, "invalid spfbase object for 'DefaultRenderFunc'.");
 			return 0;
 		}
 		static int NextObject(lua_State* L)LNOEXCEPT
@@ -856,7 +856,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 			}
 			else {
 				using sw = SPFbase::LuaWrapper::IO::StreamWrapper::Wrapper;
-				sw* data = (sw*)luaL_checkudata(L, 2, LUASTG_LUA_TYPENAME_IO_STREAM);
+				sw* data = (sw*)luaL_checkudata(L, 2, SPFBASE_LUA_TYPENAME_IO_STREAM);
 				bool result = pActivedPool->LoadTTFFont(name, data->handle, (float)luaL_checknumber(L, 3), (float)luaL_checknumber(L, 4), (float)luaL_optnumber(L, 5, 0.0), (float)luaL_optnumber(L, 6, 0.0));
 				lua_pushboolean(L, result);
 			}
@@ -996,14 +996,14 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 
 			p->SetBlendMode(TranslateBlendMode(L, 2));
 			if (lua_gettop(L) == 3)
-				p->GetSprite()->SetColor(*static_cast<fcyColor*>(luaL_checkudata(L, 3, LUASTG_LUA_TYPENAME_COLOR)));
+				p->GetSprite()->SetColor(*static_cast<fcyColor*>(luaL_checkudata(L, 3, SPFBASE_LUA_TYPENAME_COLOR)));
 			else if (lua_gettop(L) == 6)
 			{
 				fcyColor tColors[] = {
-					*static_cast<fcyColor*>(luaL_checkudata(L, 3, LUASTG_LUA_TYPENAME_COLOR)),
-					*static_cast<fcyColor*>(luaL_checkudata(L, 4, LUASTG_LUA_TYPENAME_COLOR)),
-					*static_cast<fcyColor*>(luaL_checkudata(L, 5, LUASTG_LUA_TYPENAME_COLOR)),
-					*static_cast<fcyColor*>(luaL_checkudata(L, 6, LUASTG_LUA_TYPENAME_COLOR))
+					*static_cast<fcyColor*>(luaL_checkudata(L, 3, SPFBASE_LUA_TYPENAME_COLOR)),
+					*static_cast<fcyColor*>(luaL_checkudata(L, 4, SPFBASE_LUA_TYPENAME_COLOR)),
+					*static_cast<fcyColor*>(luaL_checkudata(L, 5, SPFBASE_LUA_TYPENAME_COLOR)),
+					*static_cast<fcyColor*>(luaL_checkudata(L, 6, SPFBASE_LUA_TYPENAME_COLOR))
 				};
 				p->GetSprite()->SetColor(tColors);
 			}
@@ -1018,7 +1018,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 			p->SetBlendMode(TranslateBlendMode(L, 2));
 			if (lua_gettop(L) == 3)
 			{
-				fcyColor c = *static_cast<fcyColor*>(luaL_checkudata(L, 3, LUASTG_LUA_TYPENAME_COLOR));
+				fcyColor c = *static_cast<fcyColor*>(luaL_checkudata(L, 3, SPFBASE_LUA_TYPENAME_COLOR));
 				p->SetBlendColor(c);
 			}
 			return 0;
@@ -1032,17 +1032,17 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 			p->SetBlendMode(TranslateBlendMode(L, 2));
 			if (lua_gettop(L) == 3)
 			{
-				fcyColor c = *static_cast<fcyColor*>(luaL_checkudata(L, 3, LUASTG_LUA_TYPENAME_COLOR));
+				fcyColor c = *static_cast<fcyColor*>(luaL_checkudata(L, 3, SPFBASE_LUA_TYPENAME_COLOR));
 				for (size_t i = 0; i < p->GetCount(); ++i)
 					p->GetSprite(i)->SetColor(c);
 			}
 			else if (lua_gettop(L) == 6)
 			{
 				fcyColor tColors[] = {
-					*static_cast<fcyColor*>(luaL_checkudata(L, 3, LUASTG_LUA_TYPENAME_COLOR)),
-					*static_cast<fcyColor*>(luaL_checkudata(L, 4, LUASTG_LUA_TYPENAME_COLOR)),
-					*static_cast<fcyColor*>(luaL_checkudata(L, 5, LUASTG_LUA_TYPENAME_COLOR)),
-					*static_cast<fcyColor*>(luaL_checkudata(L, 6, LUASTG_LUA_TYPENAME_COLOR))
+					*static_cast<fcyColor*>(luaL_checkudata(L, 3, SPFBASE_LUA_TYPENAME_COLOR)),
+					*static_cast<fcyColor*>(luaL_checkudata(L, 4, SPFBASE_LUA_TYPENAME_COLOR)),
+					*static_cast<fcyColor*>(luaL_checkudata(L, 5, SPFBASE_LUA_TYPENAME_COLOR)),
+					*static_cast<fcyColor*>(luaL_checkudata(L, 6, SPFBASE_LUA_TYPENAME_COLOR))
 				};
 				for (size_t i = 0; i < p->GetCount(); ++i)
 					p->GetSprite(i)->SetColor(tColors);
@@ -1112,7 +1112,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 		}
 		static int RenderClear(lua_State* L)LNOEXCEPT
 		{
-			fcyColor* c = static_cast<fcyColor*>(luaL_checkudata(L, 1, LUASTG_LUA_TYPENAME_COLOR));
+			fcyColor* c = static_cast<fcyColor*>(luaL_checkudata(L, 1, SPFBASE_LUA_TYPENAME_COLOR));
 			LAPP.ClearScreen(*c);
 			return 0;
 		}
@@ -1200,7 +1200,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 			}
 			else if (lua_gettop(L) == 3) {
 				// "address" string color
-				fcyColor* p = static_cast<fcyColor*>(luaL_checkudata(L, 3, LUASTG_LUA_TYPENAME_COLOR));
+				fcyColor* p = static_cast<fcyColor*>(luaL_checkudata(L, 3, SPFBASE_LUA_TYPENAME_COLOR));
 				ret = LAPP.SetTextureSamplerAddress(TranslateTextureSamplerAddress(L, 2), *p);
 				if (!ret) {
 					return luaL_error(L, "Failed to set texture sampler address mode.");
@@ -1326,7 +1326,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 
 				lua_pushinteger(L, 6);
 				lua_gettable(L, 3 + i);
-				vertex[i].color = static_cast<fcyColor*>(luaL_checkudata(L, -1, LUASTG_LUA_TYPENAME_COLOR))->argb;
+				vertex[i].color = static_cast<fcyColor*>(luaL_checkudata(L, -1, SPFBASE_LUA_TYPENAME_COLOR))->argb;
 
 				lua_pop(L, 6);
 			}
@@ -1346,7 +1346,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 				(float)luaL_checknumber(L, 6),
 				LRES.GetGlobalImageScaleFactor() * (float)luaL_optnumber(L, 9, 1.0),
 				luaL_checkinteger(L, 7),
-				*static_cast<fcyColor*>(luaL_checkudata(L, 8, LUASTG_LUA_TYPENAME_COLOR))
+				*static_cast<fcyColor*>(luaL_checkudata(L, 8, SPFBASE_LUA_TYPENAME_COLOR))
 			))
 			{
 				return luaL_error(L, "can't render font '%s'.", luaL_checkstring(L, 1));
@@ -1364,7 +1364,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 				LAPP.SetFog(
 					static_cast<float>(luaL_checknumber(L, 1)),
 					static_cast<float>(luaL_checknumber(L, 2)),
-					*(static_cast<fcyColor*>(luaL_checkudata(L, 3, LUASTG_LUA_TYPENAME_COLOR)))
+					*(static_cast<fcyColor*>(luaL_checkudata(L, 3, SPFBASE_LUA_TYPENAME_COLOR)))
 				);
 			else if (lua_gettop(L) == 2)
 				LAPP.SetFog(
@@ -1428,7 +1428,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 					}
 					else if (lua_isuserdata(L, -1))
 					{
-						fcyColor c = *static_cast<fcyColor*>(luaL_checkudata(L, -1, LUASTG_LUA_TYPENAME_COLOR));
+						fcyColor c = *static_cast<fcyColor*>(luaL_checkudata(L, -1, SPFBASE_LUA_TYPENAME_COLOR));
 						p->SetValue(key, c);
 					}
 					else
@@ -1476,7 +1476,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 					}
 					else if (lua_isuserdata(L, -1))
 					{
-						fcyColor c = *static_cast<fcyColor*>(luaL_checkudata(L, -1, LUASTG_LUA_TYPENAME_COLOR));
+						fcyColor c = *static_cast<fcyColor*>(luaL_checkudata(L, -1, SPFBASE_LUA_TYPENAME_COLOR));
 						p->SetValue(key, c);
 					}
 					else
@@ -1530,7 +1530,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 			// group color
 			LPOOL.DrawGroupCollider2(
 				luaL_checkinteger(L, 1),
-				fcyColor(static_cast<fcyColor*>(luaL_checkudata(L, 2, LUASTG_LUA_TYPENAME_COLOR))->argb)
+				fcyColor(static_cast<fcyColor*>(luaL_checkudata(L, 2, SPFBASE_LUA_TYPENAME_COLOR))->argb)
 			);
 			return 0;
 		}
@@ -2229,7 +2229,7 @@ void BuiltInFunctionWrapper::Register(lua_State* L)LNOEXCEPT
 		{ NULL, NULL }
 	};
 
-	lua_getglobal(L, "lstg");				// ... t
+	lua_getglobal(L, "spfbase");				// ... t
 	::luaL_register(L, NULL, tFunctions);	// ... t
 	lua_pop(L, 1);							// ...
 }

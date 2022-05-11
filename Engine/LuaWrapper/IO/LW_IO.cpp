@@ -10,7 +10,7 @@ namespace SPFbase
 			void Register(lua_State* L)LNOEXCEPT {
 				struct Wrapper
 				{
-#define GETSTREAM_UDATA(i) StreamWrapper::Wrapper* p = static_cast<StreamWrapper::Wrapper*>(luaL_checkudata(L, (i), LUASTG_LUA_TYPENAME_IO_STREAM));
+#define GETSTREAM_UDATA(i) StreamWrapper::Wrapper* p = static_cast<StreamWrapper::Wrapper*>(luaL_checkudata(L, (i), SPFBASE_LUA_TYPENAME_IO_STREAM));
 					static int FileStream(lua_State* L)LNOEXCEPT
 					{
 						fcyStream* stream = nullptr;
@@ -87,7 +87,7 @@ namespace SPFbase
 					{ NULL, NULL }
 				};
 
-				::lua_pushstring(L, LUASTG_LUA_LIBNAME_IO);	// ... t s
+				::lua_pushstring(L, SPFBASE_LUA_LIBNAME_IO);	// ... t s
 				lua_newtable(L);							// ... t s t
 				StreamWrapper::Register(L);
 				BinaryReaderWrapper::Register(L);

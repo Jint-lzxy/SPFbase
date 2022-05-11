@@ -301,7 +301,7 @@ void FileManagerWrapper::Register(lua_State* L)LNOEXCEPT {
 			return 1;
 		}
 		static int DrawText(lua_State* L) {
-			fcyColor color = *static_cast<fcyColor*>(luaL_checkudata(L, 6, LUASTG_LUA_TYPENAME_COLOR));
+			fcyColor color = *static_cast<fcyColor*>(luaL_checkudata(L, 6, SPFBASE_LUA_TYPENAME_COLOR));
 			const bool ret = LAPP.FontRenderer_DrawTextW2(
 				luaL_checkstring(L, 1),
 				fcyVec2((float)luaL_checknumber(L, 2), (float)luaL_checknumber(L, 3)),
@@ -322,7 +322,7 @@ void FileManagerWrapper::Register(lua_State* L)LNOEXCEPT {
 		{ NULL, NULL }
 	};
 
-	lua_getglobal(L, "lstg"); // ??? t 
+	lua_getglobal(L, "spfbase"); // ??? t 
 
 	lua_newtable(L); // ??? t t
 	luaL_register(L, NULL, tMethods); // ??? t t 

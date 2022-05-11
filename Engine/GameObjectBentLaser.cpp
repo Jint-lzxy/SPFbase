@@ -157,11 +157,11 @@ bool GameObjectBentLaser::Update(size_t id, int length, float width, bool active
 {
 	GameObject* p = LPOOL.GetPooledObject(id);
 	if (!p) {
-		LERROR("lstg.BentLaser: 无效的lstg.GameObject");
+		LERROR("spfbase.BentLaser: 无效的spfbase.GameObject");
 		return false;
 	}
 	if (length <= 1) {
-		LERROR("lstg.BentLaser: 无效的参数length");
+		LERROR("spfbase.BentLaser: 无效的参数length");
 		return false;
 	}
 
@@ -238,7 +238,7 @@ bool GameObjectBentLaser::Render(const char* tex_name, BlendMode blend, fcyColor
 	fcyRefPointer<ResTexture> pTex = LRES.FindTexture(tex_name);
 	if (!pTex)
 	{
-		LERROR("lstgBentLaserData: 找不到纹理资源'%m'", tex_name);
+		LERROR("spfbaseBentLaserData: 找不到纹理资源'%m'", tex_name);
 		return false;
 	}
 
@@ -538,11 +538,11 @@ bool GameObjectBentLaser::UpdateByNode(size_t id, int node, int length, float wi
 {
 	GameObject* p = LPOOL.GetPooledObject(id);
 	if (!p) {
-		LERROR("lstg.BentLaser: 无效的lstg.GameObject");
+		LERROR("spfbase.BentLaser: 无效的spfbase.GameObject");
 		return false;
 	}
 	if (length <= 1) {
-		LERROR("lstg.BentLaser: 无效的参数length");
+		LERROR("spfbase.BentLaser: 无效的参数length");
 		return false;
 	}
 

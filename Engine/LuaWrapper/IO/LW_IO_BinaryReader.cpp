@@ -9,7 +9,7 @@ namespace SPFbase
 		{
 			void BinaryReaderWrapper::Register(lua_State* L)LNOEXCEPT {
 				struct Function {
-#define GETUDATA(index) BinaryReaderWrapper::Wrapper* p = static_cast<BinaryReaderWrapper::Wrapper*>(luaL_checkudata(L, (index), LUASTG_LUA_TYPENAME_IO_BINARY_READER));
+#define GETUDATA(index) BinaryReaderWrapper::Wrapper* p = static_cast<BinaryReaderWrapper::Wrapper*>(luaL_checkudata(L, (index), SPFBASE_LUA_TYPENAME_IO_BINARY_READER));
 					static int ReadChar(lua_State* L)LNOEXCEPT {
 						GETUDATA(-1);
 						fChar ch[2] = { 0,0 };
@@ -148,7 +148,7 @@ namespace SPFbase
 					static int Meta_ToString(lua_State* L)LNOEXCEPT
 					{
 						GETUDATA(-1);
-						::lua_pushstring(L, LUASTG_LUA_TYPENAME_IO_BINARY_READER);
+						::lua_pushstring(L, SPFBASE_LUA_TYPENAME_IO_BINARY_READER);
 						return 1;
 					}
 					static int Meta_GC(lua_State* L)LNOEXCEPT
@@ -183,14 +183,14 @@ namespace SPFbase
 					{ NULL, NULL }
 				};
 
-				RegisterClassIntoTable(L, ".BinaryReader", tMethods, LUASTG_LUA_TYPENAME_IO_BINARY_READER, tMetaTable);
+				RegisterClassIntoTable(L, ".BinaryReader", tMethods, SPFBASE_LUA_TYPENAME_IO_BINARY_READER, tMetaTable);
 			}
 
 			void BinaryReaderWrapper::CreateAndPush(lua_State* L, fcyStream* handle) {
 				BinaryReaderWrapper::Wrapper* p = static_cast<BinaryReaderWrapper::Wrapper*>(lua_newuserdata(L, sizeof(BinaryReaderWrapper::Wrapper))); // udata
 				new(p) BinaryReaderWrapper::Wrapper();
 				p->handle = new fcyBinaryReader(handle);
-				luaL_getmetatable(L, LUASTG_LUA_TYPENAME_IO_BINARY_READER); // udata mt
+				luaL_getmetatable(L, SPFBASE_LUA_TYPENAME_IO_BINARY_READER); // udata mt
 				lua_setmetatable(L, -2); // udata 
 			}
 		}

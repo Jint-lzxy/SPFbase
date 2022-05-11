@@ -80,7 +80,7 @@ void XInputManagerWrapper::Register(lua_State* L)LNOEXCEPT
 		{ NULL, NULL }
 	};
 	
-	lua_getglobal(L, "lstg"); // ??? t 
+	lua_getglobal(L, "spfbase"); // ??? t 
 	lua_newtable(L); // ??? t t
 	::luaL_register(L, NULL, tMethods); // ??? t t 
 	lua_setfield(L, -2, "XInputManager"); // ??? t 

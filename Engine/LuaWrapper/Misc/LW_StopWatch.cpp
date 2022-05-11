@@ -8,7 +8,7 @@ namespace SPFbase
 		{
 			struct Function
 			{
-#define GETUDATA(p, i) fcyStopWatch* (p) = static_cast<fcyStopWatch*>(luaL_checkudata(L, (i), LUASTG_LUA_TYPENAME_STOPWATCH));
+#define GETUDATA(p, i) fcyStopWatch* (p) = static_cast<fcyStopWatch*>(luaL_checkudata(L, (i), SPFBASE_LUA_TYPENAME_STOPWATCH));
 				static int Reset(lua_State* L)
 				{
 					GETUDATA(p, 1);
@@ -35,7 +35,7 @@ namespace SPFbase
 				}
 				static int Meta_ToString(lua_State* L)LNOEXCEPT
 				{
-					::lua_pushfstring(L, LUASTG_LUA_TYPENAME_STOPWATCH);
+					::lua_pushfstring(L, SPFBASE_LUA_TYPENAME_STOPWATCH);
 					return 1;
 				}
 #undef GETUDATA
@@ -55,14 +55,14 @@ namespace SPFbase
 				{ NULL, NULL }
 			};
 			
-			RegisterClassIntoTable(L, ".StopWatch", tMethods, LUASTG_LUA_TYPENAME_STOPWATCH, tMetaTable);
+			RegisterClassIntoTable(L, ".StopWatch", tMethods, SPFBASE_LUA_TYPENAME_STOPWATCH, tMetaTable);
 		}
 
 		void StopWatchWrapper::CreateAndPush(lua_State* L)
 		{
 			fcyStopWatch* p = static_cast<fcyStopWatch*>(lua_newuserdata(L, sizeof(fcyStopWatch))); // udata
 			new(p) fcyStopWatch();
-			luaL_getmetatable(L, LUASTG_LUA_TYPENAME_STOPWATCH); // udata mt
+			luaL_getmetatable(L, SPFBASE_LUA_TYPENAME_STOPWATCH); // udata mt
 			lua_setmetatable(L, -2); // udata
 		}
 

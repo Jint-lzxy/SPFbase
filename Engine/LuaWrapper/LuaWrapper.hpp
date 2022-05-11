@@ -7,20 +7,20 @@
 #include "..\GameObjectPool.h"
 #include "..\LuaStringToEnum.hpp"
 
-#define LUASTG_LUA_LIBNAME "lstg"
+#define SPFBASE_LUA_LIBNAME "spfbase"
 
-#define LUASTG_LUA_TYPENAME_COLOR "lstg.Color"
-#define LUASTG_LUA_TYPENAME_STOPWATCH "lstg.StopWatch"
-#define LUASTG_LUA_TYPENAME_RANDGEN "lstg.Rand"
-#define LUASTG_LUA_TYPENAME_BENTLASER "lstg.BentLaser"
+#define SPFBASE_LUA_TYPENAME_COLOR "spfbase.Color"
+#define SPFBASE_LUA_TYPENAME_STOPWATCH "spfbase.StopWatch"
+#define SPFBASE_LUA_TYPENAME_RANDGEN "spfbase.Rand"
+#define SPFBASE_LUA_TYPENAME_BENTLASER "spfbase.BentLaser"
 
-#define LUASTG_LUA_LIBNAME_IO "IO"
-#define LUASTG_LUA_TYPENAME_IO_STREAM "lstg.IO.Stream"
-#define LUASTG_LUA_TYPENAME_IO_BINARY_READER "lstg.IO.BinaryReader"
-#define LUASTG_LUA_TYPENAME_IO_BINARY_WRITER "lstg.IO.BinaryWriter"
+#define SPFBASE_LUA_LIBNAME_IO "IO"
+#define SPFBASE_LUA_TYPENAME_IO_STREAM "spfbase.IO.Stream"
+#define SPFBASE_LUA_TYPENAME_IO_BINARY_READER "spfbase.IO.BinaryReader"
+#define SPFBASE_LUA_TYPENAME_IO_BINARY_WRITER "spfbase.IO.BinaryWriter"
 
-#define LUASTG_LUA_TYPENAME_RESOURCE "lstgResource"
-#define LUASTG_LUA_TYPENAME_ARCHIVE "lstgArchive"
+#define SPFBASE_LUA_TYPENAME_RESOURCE "spfbaseResource"
+#define SPFBASE_LUA_TYPENAME_ARCHIVE "spfbaseArchive"
 
 namespace SPFbase
 {

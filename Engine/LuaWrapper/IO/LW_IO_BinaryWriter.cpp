@@ -9,7 +9,7 @@ namespace SPFbase
 		{
 			void BinaryWriterWrapper::Register(lua_State* L)LNOEXCEPT {
 				struct Function {
-#define GETUDATA(index) BinaryWriterWrapper::Wrapper* p = static_cast<BinaryWriterWrapper::Wrapper*>(luaL_checkudata(L, (index), LUASTG_LUA_TYPENAME_IO_BINARY_WRITER));
+#define GETUDATA(index) BinaryWriterWrapper::Wrapper* p = static_cast<BinaryWriterWrapper::Wrapper*>(luaL_checkudata(L, (index), SPFBASE_LUA_TYPENAME_IO_BINARY_WRITER));
 					static int WriteChar(lua_State* L)LNOEXCEPT {
 						GETUDATA(-2);
 						const char* buffer = luaL_checkstring(L, -1);
@@ -117,7 +117,7 @@ namespace SPFbase
 					static int Meta_ToString(lua_State* L)LNOEXCEPT
 					{
 						GETUDATA(-1);
-						::lua_pushstring(L, LUASTG_LUA_TYPENAME_IO_BINARY_WRITER);
+						::lua_pushstring(L, SPFBASE_LUA_TYPENAME_IO_BINARY_WRITER);
 						return 1;
 					}
 					static int Meta_GC(lua_State* L)LNOEXCEPT
@@ -152,14 +152,14 @@ namespace SPFbase
 					{ NULL, NULL }
 				};
 
-				RegisterClassIntoTable(L, ".BinaryWriter", tMethods, LUASTG_LUA_TYPENAME_IO_BINARY_WRITER, tMetaTable);
+				RegisterClassIntoTable(L, ".BinaryWriter", tMethods, SPFBASE_LUA_TYPENAME_IO_BINARY_WRITER, tMetaTable);
 			}
 
 			void BinaryWriterWrapper::CreateAndPush(lua_State* L, fcyStream* handle) {
 				BinaryWriterWrapper::Wrapper* p = static_cast<BinaryWriterWrapper::Wrapper*>(lua_newuserdata(L, sizeof(BinaryWriterWrapper::Wrapper))); // udata
 				new(p) BinaryWriterWrapper::Wrapper();
 				p->handle = new fcyBinaryWriter(handle);
-				luaL_getmetatable(L, LUASTG_LUA_TYPENAME_IO_BINARY_WRITER); // udata mt
+				luaL_getmetatable(L, SPFBASE_LUA_TYPENAME_IO_BINARY_WRITER); // udata mt
 				lua_setmetatable(L, -2); // udata 
 			}
 		}

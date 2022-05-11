@@ -392,7 +392,7 @@ int GameObjectPool::New(lua_State* L)LNOEXCEPT
 {
 	// 检查参数
 	if (!GameObjectClass::CheckClassValid(L, 1)) {
-		return luaL_error(L, "invalid argument #1, luastg object class required for 'New'.");
+		return luaL_error(L, "invalid argument #1, spfbase object class required for 'New'.");
 	}
 
 	// 分配一个对象
@@ -432,12 +432,12 @@ int GameObjectPool::New(lua_State* L)LNOEXCEPT
 int GameObjectPool::Del(lua_State* L)LNOEXCEPT
 {
 	if (!lua_istable(L, 1))
-		return luaL_error(L, "invalid argument #1, luastg object required for 'Del'.");
+		return luaL_error(L, "invalid argument #1, spfbase object required for 'Del'.");
 	lua_rawgeti(L, 1, 2);  // t(object) ... id
 	GameObject* p = m_ObjectPool.Data((size_t)luaL_checknumber(L, -1));
 	lua_pop(L, 1);  // t(object) ...
 	if (!p)
-		return luaL_error(L, "invalid argument #1, invalid luastg object.");
+		return luaL_error(L, "invalid argument #1, invalid spfbase object.");
 	
 	if (p->status == STATUS_DEFAULT)
 	{
@@ -456,12 +456,12 @@ int GameObjectPool::Del(lua_State* L)LNOEXCEPT
 int GameObjectPool::Kill(lua_State* L)LNOEXCEPT
 {
 	if (!lua_istable(L, 1))
-		return luaL_error(L, "invalid argument #1, luastg object required for 'Kill'.");
+		return luaL_error(L, "invalid argument #1, spfbase object required for 'Kill'.");
 	lua_rawgeti(L, 1, 2);  // t(object) ... id
 	GameObject* p = m_ObjectPool.Data((size_t)luaL_checknumber(L, -1));
 	lua_pop(L, 1);  // t(object) ...
 	if (!p)
-		return luaL_error(L, "invalid argument #1, invalid luastg object.");
+		return luaL_error(L, "invalid argument #1, invalid spfbase object.");
 
 	if (p->status == STATUS_DEFAULT)
 	{
@@ -866,7 +866,7 @@ int GameObjectPool::GetAttr(lua_State* L)LNOEXCEPT
 
 	GameObject* p = m_ObjectPool.Data(id);
 	if (!p)
-		return luaL_error(L, "invalid lstg object for '__index' meta operation.");
+		return luaL_error(L, "invalid spfbase object for '__index' meta operation.");
 	
 	// 查询属性
 	const char* key = luaL_checkstring(L, 2);
@@ -1093,7 +1093,7 @@ int GameObjectPool::SetAttr(lua_State* L)LNOEXCEPT
 
 	GameObject* p = m_ObjectPool.Data(id);
 	if (!p)
-		return luaL_error(L, "invalid lstg object for '__newindex' meta operation.");
+		return luaL_error(L, "invalid spfbase object for '__newindex' meta operation.");
 
 	// 查询属性
 	const char* key = luaL_checkstring(L, 2);
@@ -1211,7 +1211,7 @@ int GameObjectPool::SetAttr(lua_State* L)LNOEXCEPT
 	{
 #ifdef USING_ADVANCE_GAMEOBJECT_CLASS
 		if (!GameObjectClass::CheckClassValid(L, 3))
-			return luaL_error(L, "invalid argument, require luastg object class.");
+			return luaL_error(L, "invalid argument, require spfbase object class.");
 		p->luaclass.CheckClassClass(L, 3); // 刷新对象的class
 #endif // USING_ADVANCE_GAMEOBJECT_CLASS
 		lua_rawseti(L, 1, 1);
@@ -1295,7 +1295,7 @@ int GameObjectPool::SetAttr(lua_State* L)LNOEXCEPT
 		break;
 	case GameObjectProperty::_COLOR:
 		if (p->luaclass.IsRenderClass) {
-			p->vertexcolor.argb = static_cast<fcyColor*>(luaL_checkudata(L, 3, LUASTG_LUA_TYPENAME_COLOR))->argb;
+			p->vertexcolor.argb = static_cast<fcyColor*>(luaL_checkudata(L, 3, SPFBASE_LUA_TYPENAME_COLOR))->argb;
 		}
 		else {
 			lua_rawset(L, 1);
@@ -1354,14 +1354,14 @@ int GameObjectPool::GetObjectTable(lua_State* L)LNOEXCEPT
 int GameObjectPool::ParticleStop(lua_State* L)LNOEXCEPT
 {
 	if (!lua_istable(L, 1))
-		return luaL_error(L, "invalid lstg object for 'ParticleStop'.");
+		return luaL_error(L, "invalid spfbase object for 'ParticleStop'.");
 	lua_rawgeti(L, 1, 2);  // t(object) ??? id
 	size_t id = (size_t)luaL_checkinteger(L, -1);
 	lua_pop(L, 1);
 
 	GameObject* p = m_ObjectPool.Data(id);
 	if (!p)
-		return luaL_error(L, "invalid lstg object for 'ParticleStop'.");
+		return luaL_error(L, "invalid spfbase object for 'ParticleStop'.");
 	if (!p->res || p->res->GetType() != ResourceType::Particle)
 	{
 		LWARNING("ParticleStop: 试图停止一个不带有粒子发射器的对象的粒子发射过程(uid=%d)", m_iUid);
@@ -1374,14 +1374,14 @@ int GameObjectPool::ParticleStop(lua_State* L)LNOEXCEPT
 int GameObjectPool::ParticleFire(lua_State* L)LNOEXCEPT
 {
 	if (!lua_istable(L, 1))
-	return luaL_error(L, "invalid lstg object for 'ParticleFire'.");
+	return luaL_error(L, "invalid spfbase object for 'ParticleFire'.");
 	lua_rawgeti(L, 1, 2);  // t(object) ??? id
 	size_t id = (size_t)luaL_checkinteger(L, -1);
 	lua_pop(L, 1);
 
 	GameObject* p = m_ObjectPool.Data(id);
 	if (!p)
-		return luaL_error(L, "invalid lstg object for 'ParticleFire'.");
+		return luaL_error(L, "invalid spfbase object for 'ParticleFire'.");
 	if (!p->res || p->res->GetType() != ResourceType::Particle)
 	{
 		LWARNING("ParticleFire: 试图启动一个不带有粒子发射器的对象的粒子发射过程(uid=%d)", m_iUid);
@@ -1394,14 +1394,14 @@ int GameObjectPool::ParticleFire(lua_State* L)LNOEXCEPT
 int GameObjectPool::ParticleGetn(lua_State* L)LNOEXCEPT
 {
 	if (!lua_istable(L, 1))
-	return luaL_error(L, "invalid lstg object for 'ParticleFire'.");
+	return luaL_error(L, "invalid spfbase object for 'ParticleFire'.");
 	lua_rawgeti(L, 1, 2);  // t(object) ??? id
 	size_t id = (size_t)luaL_checkinteger(L, -1);
 	lua_pop(L, 1);
 
 	GameObject* p = m_ObjectPool.Data(id);
 	if (!p)
-		return luaL_error(L, "invalid lstg object for 'ParticleFire'.");
+		return luaL_error(L, "invalid spfbase object for 'ParticleFire'.");
 	if (!p->res || p->res->GetType() != ResourceType::Particle)
 	{
 		lua_pushinteger(L, 0);
@@ -1414,14 +1414,14 @@ int GameObjectPool::ParticleGetn(lua_State* L)LNOEXCEPT
 int GameObjectPool::ParticleGetEmission(lua_State* L)LNOEXCEPT
 {
 	if (!lua_istable(L, 1))
-	return luaL_error(L, "invalid lstg object for 'ParticleGetEmission'.");
+	return luaL_error(L, "invalid spfbase object for 'ParticleGetEmission'.");
 	lua_rawgeti(L, 1, 2);  // t(object) ??? id
 	size_t id = (size_t)luaL_checkinteger(L, -1);
 	lua_pop(L, 1);
 
 	GameObject* p = m_ObjectPool.Data(id);
 	if (!p)
-		return luaL_error(L, "invalid lstg object for 'ParticleGetEmission'.");
+		return luaL_error(L, "invalid spfbase object for 'ParticleGetEmission'.");
 	if (!p->res || p->res->GetType() != ResourceType::Particle)
 	{
 		LWARNING("ParticleGetEmission: 试图获取一个不带有粒子发射器的对象的粒子发射密度(uid=%d)", m_iUid);
@@ -1435,14 +1435,14 @@ int GameObjectPool::ParticleGetEmission(lua_State* L)LNOEXCEPT
 int GameObjectPool::ParticleSetEmission(lua_State* L)LNOEXCEPT
 {
 	if (!lua_istable(L, 1))
-	return luaL_error(L, "invalid lstg object for 'ParticleGetEmission'.");
+	return luaL_error(L, "invalid spfbase object for 'ParticleGetEmission'.");
 	lua_rawgeti(L, 1, 2);  // t(object) ??? id
 	size_t id = (size_t)luaL_checkinteger(L, -1);
 	lua_pop(L, 1);
 
 	GameObject* p = m_ObjectPool.Data(id);
 	if (!p)
-		return luaL_error(L, "invalid lstg object for 'ParticleGetEmission'.");
+		return luaL_error(L, "invalid spfbase object for 'ParticleGetEmission'.");
 	if (!p->res || p->res->GetType() != ResourceType::Particle)
 	{
 		LWARNING("ParticleSetEmission: 试图设置一个不带有粒子发射器的对象的粒子发射密度(uid=%d)", m_iUid);

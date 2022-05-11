@@ -14,19 +14,19 @@ namespace SPFbase
 		{
 			struct Function
 			{
-#define GETUDATA(p, i) Wrapper* (p) = static_cast<Wrapper*>(luaL_checkudata(L, (i), LUASTG_LUA_TYPENAME_BENTLASER));
-#define CHECKUDATA(p) if (!(p)->handle) return luaL_error(L, "%s was released.", LUASTG_LUA_TYPENAME_BENTLASER);
+#define GETUDATA(p, i) Wrapper* (p) = static_cast<Wrapper*>(luaL_checkudata(L, (i), SPFBASE_LUA_TYPENAME_BENTLASER));
+#define CHECKUDATA(p) if (!(p)->handle) return luaL_error(L, "%s was released.", SPFBASE_LUA_TYPENAME_BENTLASER);
 				static int Update(lua_State* L)LNOEXCEPT
 				{
 					GETUDATA(p, 1);
 					CHECKUDATA(p);
 					if (!lua_istable(L, 2))
-						return luaL_error(L, "invalid lstg object for 'Update'.");
+						return luaL_error(L, "invalid spfbase object for 'Update'.");
 					lua_rawgeti(L, 2, 2);  // self t(object) ??? id
 					size_t id = (size_t)luaL_checkinteger(L, -1);
 					lua_pop(L, 1);
 					if (!p->handle->Update(id, luaL_checkinteger(L, 3), (float)luaL_checknumber(L, 4), luaL_optnumber(L, 5, 0) == 0))
-						return luaL_error(L, "invalid lstg object for 'Update'.");
+						return luaL_error(L, "invalid spfbase object for 'Update'.");
 					return 0;
 				}
 				static int UpdateNode(lua_State* L)LNOEXCEPT
@@ -34,12 +34,12 @@ namespace SPFbase
 					GETUDATA(p, 1);
 					CHECKUDATA(p);
 					if (!lua_istable(L, 2))
-						return luaL_error(L, "invalid lstg object for 'UpdateNode'.");
+						return luaL_error(L, "invalid spfbase object for 'UpdateNode'.");
 					lua_rawgeti(L, 2, 2);  // self t(object) ??? id
 					size_t id = (size_t)luaL_checkinteger(L, -1);
 					lua_pop(L, 1);
 					if (!p->handle->UpdateByNode(id, luaL_checkinteger(L, 3), luaL_checkinteger(L, 4), (float)luaL_checknumber(L, 5), luaL_optnumber(L, 6, 0) == 0))
-						return luaL_error(L, "invalid lstg object for 'UpdateNode'.");
+						return luaL_error(L, "invalid spfbase object for 'UpdateNode'.");
 					return 0;
 				}
 				static int UpdatePositionByList(lua_State* L)LNOEXCEPT // u(laser) t(list) length width index revert 
@@ -47,7 +47,7 @@ namespace SPFbase
 					GETUDATA(p, 1);
 					CHECKUDATA(p);
 					if (!lua_istable(L, 2))
-						return luaL_error(L, "invalid lstg object for 'Update'.");
+						return luaL_error(L, "invalid spfbase object for 'Update'.");
 					int i3 = luaL_checkinteger(L, 3);
 					float f4 = (float)luaL_checknumber(L, 4);
 					int i5 = luaL_optinteger(L, 5, 1);
@@ -86,7 +86,7 @@ namespace SPFbase
 					if (!p->handle->Render(
 						luaL_checkstring(L, 2),
 						TranslateBlendMode(L, 3),
-						*static_cast<fcyColor*>(luaL_checkudata(L, 4, LUASTG_LUA_TYPENAME_COLOR)),
+						*static_cast<fcyColor*>(luaL_checkudata(L, 4, SPFBASE_LUA_TYPENAME_COLOR)),
 						(float)luaL_checknumber(L, 5),
 						(float)luaL_checknumber(L, 6),
 						(float)luaL_checknumber(L, 7),
@@ -120,7 +120,7 @@ namespace SPFbase
 				static int RenderCollider(lua_State* L) {
 					GETUDATA(p, 1);
 					CHECKUDATA(p);
-					p->handle->RenderCollider(*static_cast<fcyColor*>(luaL_checkudata(L, 2, LUASTG_LUA_TYPENAME_COLOR)));
+					p->handle->RenderCollider(*static_cast<fcyColor*>(luaL_checkudata(L, 2, SPFBASE_LUA_TYPENAME_COLOR)));
 					return 0;
 				}
 				static int CollisionCheckWidth(lua_State* L)LNOEXCEPT
@@ -186,7 +186,7 @@ namespace SPFbase
 				}
 				static int Meta_ToString(lua_State* L)LNOEXCEPT
 				{
-					lua_pushfstring(L, LUASTG_LUA_TYPENAME_BENTLASER);
+					lua_pushfstring(L, SPFBASE_LUA_TYPENAME_BENTLASER);
 					return 1;
 				}
 				static int Meta_GC(lua_State* L)LNOEXCEPT
@@ -229,7 +229,7 @@ namespace SPFbase
 				{ NULL, NULL }
 			};
 			
-			RegisterClassIntoTable(L, ".BentLaser", tMethods, LUASTG_LUA_TYPENAME_BENTLASER, tMetaTable);
+			RegisterClassIntoTable(L, ".BentLaser", tMethods, SPFBASE_LUA_TYPENAME_BENTLASER, tMetaTable);
 		}
 
 		void BentLaserWrapper::CreateAndPush(lua_State* L)
@@ -241,7 +241,7 @@ namespace SPFbase
 			catch (const std::bad_alloc&) {
 				p->handle = nullptr;
 			}
-			luaL_getmetatable(L, LUASTG_LUA_TYPENAME_BENTLASER); // udata mt
+			luaL_getmetatable(L, SPFBASE_LUA_TYPENAME_BENTLASER); // udata mt
 			lua_setmetatable(L, -2); // udata
 		}
 	}

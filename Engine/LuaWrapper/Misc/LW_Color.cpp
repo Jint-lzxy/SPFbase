@@ -84,9 +84,9 @@ namespace SPFbase
 
 		void ColorWrapper::Register(lua_State* L)LNOEXCEPT {
 			struct Function {
-#define _GETUDATA(i) static_cast<fcyColor*>(luaL_checkudata(L, (i), LUASTG_LUA_TYPENAME_COLOR));
+#define _GETUDATA(i) static_cast<fcyColor*>(luaL_checkudata(L, (i), SPFBASE_LUA_TYPENAME_COLOR));
 #define GETUDATA(p, i) fcyColor* (p) = _GETUDATA(i);
-#define GETUDATAHSV(p, i) HSVColor* (p) = (HSVColor*)((fcyColor*)luaL_checkudata(L, (i), LUASTG_LUA_TYPENAME_COLOR) + 1);
+#define GETUDATAHSV(p, i) HSVColor* (p) = (HSVColor*)((fcyColor*)luaL_checkudata(L, (i), SPFBASE_LUA_TYPENAME_COLOR) + 1);
 				static int ARGB(lua_State* L)LNOEXCEPT
 				{
 					auto args = lua_gettop(L);
@@ -235,7 +235,7 @@ namespace SPFbase
 				}
 				static int Meta_Add(lua_State* L)LNOEXCEPT
 				{
-					if (lua_isnumber(L, 1)) {  // arg1为数字，则arg2必为lstgColor
+					if (lua_isnumber(L, 1)) {  // arg1为数字，则arg2必为spfbaseColor
 						lua_Number tFactor = luaL_checknumber(L, 1);
 						GETUDATA(p, 2);
 						ColorWrapper::CreateAndPush(L, fcyColor(
@@ -245,7 +245,7 @@ namespace SPFbase
 							std::clamp((fInt)(tFactor + (lua_Number)p->b), 0, 255)
 						));
 					}
-					else if (lua_isnumber(L, 2)) { // arg2为数字，则arg1必为lstgColor
+					else if (lua_isnumber(L, 2)) { // arg2为数字，则arg1必为spfbaseColor
 						lua_Number tFactor = luaL_checknumber(L, 2);
 						GETUDATA(p, 1);
 						ColorWrapper::CreateAndPush(L, fcyColor(
@@ -269,7 +269,7 @@ namespace SPFbase
 				}
 				static int Meta_Sub(lua_State* L)LNOEXCEPT
 				{
-					if (lua_isnumber(L, 1)) {  // arg1为数字，则arg2必为lstgColor
+					if (lua_isnumber(L, 1)) {  // arg1为数字，则arg2必为spfbaseColor
 						lua_Number tFactor = luaL_checknumber(L, 1);
 						GETUDATA(p, 2);
 						ColorWrapper::CreateAndPush(L, fcyColor(
@@ -279,7 +279,7 @@ namespace SPFbase
 							std::clamp((fInt)(tFactor - (lua_Number)p->b), 0, 255)
 						));
 					}
-					else if (lua_isnumber(L, 2)) { // arg2为数字，则arg1必为lstgColor
+					else if (lua_isnumber(L, 2)) { // arg2为数字，则arg1必为spfbaseColor
 						lua_Number tFactor = luaL_checknumber(L, 2);
 						GETUDATA(p, 1);
 						ColorWrapper::CreateAndPush(L, fcyColor(
@@ -303,7 +303,7 @@ namespace SPFbase
 				}
 				static int Meta_Mul(lua_State* L)LNOEXCEPT
 				{
-					if (lua_isnumber(L, 1)) {  // arg1为数字，则arg2必为lstgColor
+					if (lua_isnumber(L, 1)) {  // arg1为数字，则arg2必为spfbaseColor
 						lua_Number tFactor = luaL_checknumber(L, 1);
 						GETUDATA(p, 2);
 						ColorWrapper::CreateAndPush(L, fcyColor(
@@ -313,7 +313,7 @@ namespace SPFbase
 							std::clamp((fInt)(tFactor * (lua_Number)p->b), 0, 255)
 						));
 					}
-					else if (lua_isnumber(L, 2)) { // arg2为数字，则arg1必为lstgColor
+					else if (lua_isnumber(L, 2)) { // arg2为数字，则arg1必为spfbaseColor
 						lua_Number tFactor = luaL_checknumber(L, 2);
 						GETUDATA(p, 1);
 						ColorWrapper::CreateAndPush(L, fcyColor(
@@ -337,7 +337,7 @@ namespace SPFbase
 				}
 				static int Meta_Div(lua_State* L)LNOEXCEPT
 				{
-					if (lua_isnumber(L, 1)) {  // arg1为数字，则arg2必为lstgColor
+					if (lua_isnumber(L, 1)) {  // arg1为数字，则arg2必为spfbaseColor
 						lua_Number tFactor = luaL_checknumber(L, 1);
 						GETUDATA(p, 2);
 						ColorWrapper::CreateAndPush(L, fcyColor(
@@ -347,7 +347,7 @@ namespace SPFbase
 							std::clamp((fInt)(tFactor / (lua_Number)p->b), 0, 255)
 						));
 					}
-					else if (lua_isnumber(L, 2)) { // arg2为数字，则arg1必为lstgColor
+					else if (lua_isnumber(L, 2)) { // arg2为数字，则arg1必为spfbaseColor
 						lua_Number tFactor = luaL_checknumber(L, 2);
 						GETUDATA(p, 1);
 						ColorWrapper::CreateAndPush(L, fcyColor(
@@ -372,7 +372,7 @@ namespace SPFbase
 				static int Meta_ToString(lua_State* L)LNOEXCEPT
 				{
 					GETUDATA(p, 1);
-					lua_pushfstring(L, "lstg.Color(%d, %d, %d, %d)", p->a, p->r, p->g, p->b);
+					lua_pushfstring(L, "spfbase.Color(%d, %d, %d, %d)", p->a, p->r, p->g, p->b);
 					return 1;
 				}
 #undef _GETUDATA
@@ -400,7 +400,7 @@ namespace SPFbase
 				{ NULL, NULL }
 			};
 
-			RegisterClassIntoTable2(L, ".Color", tMethods, LUASTG_LUA_TYPENAME_COLOR, tMetaTable);
+			RegisterClassIntoTable2(L, ".Color", tMethods, SPFBASE_LUA_TYPENAME_COLOR, tMetaTable);
 		}
 
 		void ColorWrapper::CreateAndPush(lua_State* L, const fcyColor& color) {
@@ -409,7 +409,7 @@ namespace SPFbase
 			HSVColor* q = (HSVColor*)((fcyColor*)p + 1);
 			new(q) HSVColor;
 			*q = RGB2HSV(color);
-			luaL_getmetatable(L, LUASTG_LUA_TYPENAME_COLOR); // udata mt
+			luaL_getmetatable(L, SPFBASE_LUA_TYPENAME_COLOR); // udata mt
 			lua_setmetatable(L, -2); // udata
 		}
 	}

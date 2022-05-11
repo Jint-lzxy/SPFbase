@@ -19,13 +19,13 @@ void ArchiveWrapper::Register(lua_State* L)LNOEXCEPT {
 	struct Function {
 		static int IsValid(lua_State* L) {
 			// self
-			ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(luaL_checkudata(L, -1, LUASTG_LUA_TYPENAME_ARCHIVE));
+			ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(luaL_checkudata(L, -1, SPFBASE_LUA_TYPENAME_ARCHIVE));
 			::lua_pushboolean(L, (LFMGR.GetArchiveByUID(p->uid) != nullptr));
 			return 1;
 		}
 		static int EnumFiles(lua_State* L) {
 			// ??? self searchpath
-			ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(luaL_checkudata(L, -2, LUASTG_LUA_TYPENAME_ARCHIVE));
+			ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(luaL_checkudata(L, -2, SPFBASE_LUA_TYPENAME_ARCHIVE));
 			Archive* zip = LFMGR.GetArchiveByUID(p->uid);
 			if (zip != nullptr) {
 				string frompathattr = luaL_checkstring(L, -1);
@@ -85,7 +85,7 @@ void ArchiveWrapper::Register(lua_State* L)LNOEXCEPT {
 		}
 		static int ListFiles(lua_State* L) {
 			// ??? self
-			ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(luaL_checkudata(L, -1, LUASTG_LUA_TYPENAME_ARCHIVE));
+			ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(luaL_checkudata(L, -1, SPFBASE_LUA_TYPENAME_ARCHIVE));
 			Archive* zip = LFMGR.GetArchiveByUID(p->uid);
 			if (zip != nullptr) {
 				lua_newtable(L);// ??? self t 
@@ -113,7 +113,7 @@ void ArchiveWrapper::Register(lua_State* L)LNOEXCEPT {
 		}
 		static int FileExist(lua_State* L) {
 			// ??? self path
-			ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(luaL_checkudata(L, -2, LUASTG_LUA_TYPENAME_ARCHIVE));
+			ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(luaL_checkudata(L, -2, SPFBASE_LUA_TYPENAME_ARCHIVE));
 			Archive* zip = LFMGR.GetArchiveByUID(p->uid);
 			if (zip != nullptr) {
 				string frompath = luaL_checkstring(L, -1);
@@ -127,7 +127,7 @@ void ArchiveWrapper::Register(lua_State* L)LNOEXCEPT {
 		}
 		static int GetName(lua_State* L) {
 			// ??? self
-			ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(luaL_checkudata(L, -1, LUASTG_LUA_TYPENAME_ARCHIVE));
+			ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(luaL_checkudata(L, -1, SPFBASE_LUA_TYPENAME_ARCHIVE));
 			Archive* zip = LFMGR.GetArchiveByUID(p->uid);
 			if (zip != nullptr) {
 				lua_pushstring(L, zip->GetArchivePath());
@@ -139,7 +139,7 @@ void ArchiveWrapper::Register(lua_State* L)LNOEXCEPT {
 		}
 		static int GetPriority(lua_State* L) {
 			// ??? self
-			ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(luaL_checkudata(L, -1, LUASTG_LUA_TYPENAME_ARCHIVE));
+			ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(luaL_checkudata(L, -1, SPFBASE_LUA_TYPENAME_ARCHIVE));
 			Archive* zip = LFMGR.GetArchiveByUID(p->uid);
 			if (zip != nullptr) {
 				lua_pushinteger(L, zip->GetPriority());
@@ -151,7 +151,7 @@ void ArchiveWrapper::Register(lua_State* L)LNOEXCEPT {
 		}
 		static int SetPriority(lua_State* L) {
 			// ??? self priority
-			ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(luaL_checkudata(L, -2, LUASTG_LUA_TYPENAME_ARCHIVE));
+			ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(luaL_checkudata(L, -2, SPFBASE_LUA_TYPENAME_ARCHIVE));
 			int priority = luaL_checkinteger(L, -1);
 			LFMGR.SetArchivePriorityByUID(p->uid, priority);
 			return 0;
@@ -160,8 +160,8 @@ void ArchiveWrapper::Register(lua_State* L)LNOEXCEPT {
 		static int Meta_ToString(lua_State* L)LNOEXCEPT
 		{
 			// ??? self 
-			ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(luaL_checkudata(L, -1, LUASTG_LUA_TYPENAME_ARCHIVE));
-			lua_pushfstring(L, "lstg.Archive object");
+			ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(luaL_checkudata(L, -1, SPFBASE_LUA_TYPENAME_ARCHIVE));
+			lua_pushfstring(L, "spfbase.Archive object");
 			return 1;
 		}
 	};
@@ -184,13 +184,13 @@ void ArchiveWrapper::Register(lua_State* L)LNOEXCEPT {
 		{ NULL, NULL }
 	};
 	
-	SPFbase::RegisterMethodD(L, LUASTG_LUA_TYPENAME_ARCHIVE, tMethods, tMetaTable);
+	SPFbase::RegisterMethodD(L, SPFBASE_LUA_TYPENAME_ARCHIVE, tMethods, tMetaTable);
 }
 
 void ArchiveWrapper::CreateAndPush(lua_State* L, unsigned int uid)LNOEXCEPT {
 	ArchiveWrapper::Wrapper* p = static_cast<ArchiveWrapper::Wrapper*>(lua_newuserdata(L, sizeof(ArchiveWrapper::Wrapper))); // udata
 	new(p) ArchiveWrapper::Wrapper(); // udata
 	p->uid = uid;
-	luaL_getmetatable(L, LUASTG_LUA_TYPENAME_ARCHIVE); // udata mt
+	luaL_getmetatable(L, SPFBASE_LUA_TYPENAME_ARCHIVE); // udata mt
 	lua_setmetatable(L, -2); // udata 
 }

@@ -52,7 +52,7 @@
 #include "Config.h"
 
 // 一些全局范围的宏
-#define LVERSION L"luaSTG-0.1"
+#define LVERSION L"SPFbase-0.1"
 #define LVERSION_LUA LUAJIT_VERSION
 
 // 全局文件

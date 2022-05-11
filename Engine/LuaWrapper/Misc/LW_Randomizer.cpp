@@ -9,7 +9,7 @@ namespace SPFbase
 		{
 			struct Function
 			{
-#define GETUDATA(p, i) fcyRandomWELL512* (p) = static_cast<fcyRandomWELL512*>(luaL_checkudata(L, (i), LUASTG_LUA_TYPENAME_RANDGEN));
+#define GETUDATA(p, i) fcyRandomWELL512* (p) = static_cast<fcyRandomWELL512*>(luaL_checkudata(L, (i), SPFBASE_LUA_TYPENAME_RANDGEN));
 				static int Seed(lua_State* L)LNOEXCEPT
 				{
 					GETUDATA(p, 1);
@@ -47,7 +47,7 @@ namespace SPFbase
 				}
 				static int Meta_ToString(lua_State* L)LNOEXCEPT
 				{
-					lua_pushfstring(L, LUASTG_LUA_TYPENAME_RANDGEN);
+					lua_pushfstring(L, SPFBASE_LUA_TYPENAME_RANDGEN);
 					return 1;
 				}
 #undef GETUDATA
@@ -69,14 +69,14 @@ namespace SPFbase
 				{ NULL, NULL }
 			};
 			
-			RegisterClassIntoTable(L, ".Rand", tMethods, LUASTG_LUA_TYPENAME_RANDGEN, tMetaTable);
+			RegisterClassIntoTable(L, ".Rand", tMethods, SPFBASE_LUA_TYPENAME_RANDGEN, tMetaTable);
 		}
 
 		void RandomizerWrapper::CreateAndPush(lua_State* L)
 		{
 			fcyRandomWELL512* p = static_cast<fcyRandomWELL512*>(lua_newuserdata(L, sizeof(fcyRandomWELL512))); // udata
 			new(p) fcyRandomWELL512();
-			luaL_getmetatable(L, LUASTG_LUA_TYPENAME_RANDGEN); // udata mt
+			luaL_getmetatable(L, SPFBASE_LUA_TYPENAME_RANDGEN); // udata mt
 			lua_setmetatable(L, -2); // udata
 		}
 	}

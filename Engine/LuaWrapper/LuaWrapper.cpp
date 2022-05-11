@@ -123,7 +123,7 @@ namespace SPFbase
 			BentLaserWrapper::Register(L);
 			IO::Register(L);
 			::luaL_register(L, NULL, tMethod);
-			::lua_setglobal(L, LUASTG_LUA_LIBNAME);	// ...
+			::lua_setglobal(L, SPFBASE_LUA_LIBNAME);	// ...
 		}
 	}
 

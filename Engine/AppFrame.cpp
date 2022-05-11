@@ -1380,7 +1380,7 @@ bool AppFrame::Init()LNOEXCEPT
 			LERROR("内置资源出错");
 		}
 
-		RegistBuiltInClassWrapper(L);  // 注册内建类 (luastg lib)
+		RegistBuiltInClassWrapper(L);  // 注册内建类 (spfbase lib)
 		Xrysnow::InitStringToEnumHash(L); // 准备属性hash
 
 		lua_gc(L, LUA_GCRESTART, -1);  // 重启GC
@@ -1400,7 +1400,7 @@ bool AppFrame::Init()LNOEXCEPT
 
 	// 设置命令行参数
 	regex tDebuggerPattern("\\/debugger:(\\d+)");
-	lua_getglobal(L, "lstg");  // t
+	lua_getglobal(L, "spfbase");  // t
 	lua_newtable(L);  // t t
 	for (int i = 0, c = 1; i < __argc; ++i)
 	{
@@ -1566,7 +1566,7 @@ bool AppFrame::Init()LNOEXCEPT
 				LWARNING("无法装载手柄，忽略。");
 		}
 
-		// luastg不使用ZBuffer，将其关闭。
+		// spfbase不使用ZBuffer，将其关闭。
 		m_pRenderDev->SetZBufferEnable(false);
 		m_pRenderDev->ClearZBuffer();
 	}

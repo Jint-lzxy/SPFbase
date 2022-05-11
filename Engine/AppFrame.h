@@ -99,7 +99,7 @@ namespace SPFbase
 		bool m_OptionVsync = true;
 		fcyVec2 m_OptionResolution = fcyVec2(640.f, 480.f);
 		bool m_OptionSplash = false;
-		std::wstring m_OptionTitle = L"LuaSTG";
+		std::wstring m_OptionTitle = L"SPFbase";
 		fDouble m_fFPS = 0.;
 
 		// 引擎
@@ -283,7 +283,7 @@ namespace SPFbase
 		{
 			if (m_GraphType == GraphicsType::Graph2D)
 			{
-				// luastg的lua部分已经做了坐标修正
+				// spfbase的lua部分已经做了坐标修正
 				// m_Graph2D->SetWorldTransform(fcyMatrix4::GetTranslateMatrix(fcyVec3(-0.5f, -0.5f, 0.f)));
 				m_Graph2D->SetWorldTransform(fcyMatrix4::GetIdentity());
 				//m_Graph2D->SetViewTransform(fcyMatrix4::GetIdentity());

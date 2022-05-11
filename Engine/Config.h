@@ -1,8 +1,8 @@
 #pragma once
 
 // log file
-#define APP_COMPANY L"LuaSTG"
-#define APP_PRODUCT L"LuaSTG"
+#define APP_COMPANY L"SPFbase"
+#define APP_PRODUCT L"SPFbase"
 //#define USING_SYSTEM_DIRECTORY
 
 // steam

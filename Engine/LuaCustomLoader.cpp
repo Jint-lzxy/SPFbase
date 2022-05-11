@@ -65,7 +65,7 @@ static void loaderror(lua_State* L, const char* filename) {
         lua_tostring(L, 1), filename, lua_tostring(L, -1));
 }
 
-static int package_loader_luastg(lua_State* L) {
+static int package_loader_spfbase(lua_State* L) {
     const char* filename;
     const char* name = luaL_checkstring(L, 1);
     filename = findfile(L, name, "path");
@@ -100,7 +100,7 @@ namespace SPFbase {
             lua_getfield(L, -1, "loaders");                  // ??? t t
             if (lua_istable(L, -1)) {
                 lua_pushinteger(L, lua_objlen(L, -1) + 1);   // ??? t t i
-                lua_pushcfunction(L, package_loader_luastg); // ??? t t i f
+                lua_pushcfunction(L, package_loader_spfbase); // ??? t t i f
                 lua_settable(L, -3);                         // ??? t t
             }
             lua_pop(L, 1);                                   // ??? t
