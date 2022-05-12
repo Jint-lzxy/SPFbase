@@ -1,8 +1,8 @@
 [submodule "luafilesystem"]
 	path = luafilesystem
 	url = https://github.com/keplerproject/luafilesystem.git
-[submodule "lua-cjson"]
-	path = lua-cjson
+[submodule "luacjson"]
+	path = luacjson
 	url = https://github.com/mpx/lua-cjson.git
 [submodule "luasocket"]
 	path = luasocket
