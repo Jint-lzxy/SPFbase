@@ -16,7 +16,7 @@
 # 隐私文件
 
 /Engine/MyResourcePassword.cpp
-/Engine/ResourcePassword.cpp
+# /Engine/ResourcePassword.cpp
 /check.txt
 
 # 生成文件
