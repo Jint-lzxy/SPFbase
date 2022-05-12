@@ -33,7 +33,7 @@ jobs:
       run: nuget restore ${{env.SOLUTION_FILE_PATH}}
     
     - name: Check Env
-      run: cd ${{env.GITHUB_WORKSPACE}}; dir
+      run: cd D:\a\SPFbase\SPFbase; dir
     
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
