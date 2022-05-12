@@ -2,7 +2,7 @@
 
 《东方天慾录 ～The Sealing of Prophet's Fantasy》底层程序 by [冷酔閑吟](https://github.com/Jint-lzxy)
 
-- 使用到的第三方库（`.gitmodules`还没整好最近补上awwww（
+- 使用到的第三方库（请参考`.gitmodules`和`prebuild`
   - luafilesystem
   - luacjson
   - luajit
