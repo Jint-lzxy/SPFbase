@@ -41,7 +41,7 @@
 # 第三方库和Extend生成文件过滤
 
 /LuaExtend/build/*
-# /prebuild/*
+/prebuild/.DS_Store
 /SteamAPI/*
 
 # 杂项
