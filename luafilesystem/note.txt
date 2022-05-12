@@ -1,1 +1,0 @@
-Not listed due to copyright reasons. Download it from 'https://github.com/keplerproject/luafilesystem' and extract it here!

@@ -43,12 +43,6 @@
 /LuaExtend/build/*
 /prebuild/*
 /SteamAPI/*
-/luafilesystem/*
-!/luafilesystem/note.txt
-/luacjson/*
-!/luacjson/note.txt
-/luasocket/*
-!/luasocket/note.txt
 
 # 杂项
 
