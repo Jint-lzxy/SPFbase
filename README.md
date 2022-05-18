@@ -1,4 +1,12 @@
 # SPFbase
+[![Build Status](https://github.com/Jint-lzxy/SPFbase/actions/workflows/build_engine.yml/badge.svg?branch=master)](https://github.com/Jint-lzxy/SPFbase/actions)
+![Repository Size](https://img.shields.io/github/repo-size/Jint-lzxy/SPFbase)
+![Lines of Codes](https://img.shields.io/tokei/lines/github.com/Jint-lzxy/SPFbase)
+![Latest Release](https://img.shields.io/github/v/release/Jint-lzxy/SPFbase?include_prereleases)
+![Last Commit](https://img.shields.io/github/last-commit/Jint-lzxy/SPFbase)
+![Open Issues](https://img.shields.io/github/issues/Jint-lzxy/SPFbase?color=important)
+![Open Pull Requests](https://img.shields.io/github/issues-pr/Jint-lzxy/SPFbase?color=yellowgreen)
+![License](https://img.shields.io/github/license/Jint-lzxy/SPFbase)
 
 《东方天慾录 ～The Sealing of Prophet's Fantasy》底层程序 by [冷酔閑吟](https://github.com/Jint-lzxy)
 
