@@ -3,7 +3,7 @@
 	url = https://github.com/keplerproject/luafilesystem.git
 [submodule "luacjson"]
 	path = luacjson
-	url = https://github.com/mpx/lua-cjson.git
+	url = https://github.com/Jint-lzxy/lua-cjson.git
 [submodule "luasocket"]
 	path = luasocket
 	url = https://github.com/lunarmodules/luasocket.git
