@@ -1,10 +1,10 @@
-name: 🥰构建引擎
+name: Build Engine
 
 on:
   push:
-    branches: [ action-dev ]
+    branches: [ master ]
   pull_request:
-    branches: [ action-dev ]
+    branches: [ master ]
   workflow_dispatch:
 
 env:
@@ -20,6 +20,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        submodules: true
 
     - name: Prerequisites Check
       uses: microsoft/setup-msbuild@v1.0.2
